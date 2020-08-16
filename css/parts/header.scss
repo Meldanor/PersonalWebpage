@@ -1,12 +1,12 @@
 header {
   nav {
-    background-image: linear-gradient(0deg, #a1c4fd 0%, #c2e9fb 100%);
+    background: #a1c4fd;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
 
     a {
-      text-decoration: none;
       color: #505050;
       font-weight: bold;
       margin-left: 1rem;
