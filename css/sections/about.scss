@@ -5,7 +5,6 @@
 
 #about-container {
   background-color: #fffcfc78;
-  height: 50vh;
   margin: auto;
   display: flex;
 }
@@ -18,6 +17,40 @@
 }
 
 #about-soft-skills {
-  background-color: green;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.soft-skill-block {
+  width: 10rem;
+  height: 10rem;
+  color: #fffffff0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: gray 1px solid;
+
+  @include xsm {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+
+  @include md {
+    margin: 0.25rem;
+  }
+
+  @include lg {
+    margin: 1.5rem;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  p {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    width: 75%;
+    background-color: black;
+  }
 }

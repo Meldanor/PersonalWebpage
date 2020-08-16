@@ -3,7 +3,7 @@
     <div id="about-me">
       <h1>Kilian Gärtner</h1>
       <h2>Software Ingenieur bei <a href="https://www.naymspace.de/">naymspace</a></h2>
-      <p class="justify">
+      <p style="margin-bottom: 2.5rem" class="justify">
         Ich konzipiere und entwickele seit über <span id="years"></span> Jahren Software für verschiedenste
         Anwendungsbereiche. Am liebsten beschäftige ich mich mit Servern und Backendtechnologien und nutze dazu die
         Ökosysteme von <a href="https://elixir-lang.org/">Elixir</a> und <a href="https://openjdk.java.net/">Java</a>.
@@ -14,6 +14,49 @@
       </p>
       <a class="button" href="/static/Qualifikationsprofil.pdf" title="Lebenslauf">Lebenslauf</a>
     </div>
-    <div id="about-soft-skills"></div>
+    <div id="about-soft-skills">
+      <include src="components/softSkillBlock.html"
+               locals='{
+                        "text": "Führung",
+                        "percentage": "35",
+                        "color": "#1f77b4"
+                        }'
+      ></include>
+      <include src="components/softSkillBlock.html"
+               locals='{
+                        "text": "Lernen",
+                        "percentage": "15",
+                        "color": "#ff7f0e"
+                        }'
+      ></include>
+      <include src="components/softSkillBlock.html"
+               locals='{
+                        "text": "Organisation",
+                        "percentage": "30",
+                        "color": "#2ca02c"
+                        }'
+      ></include>
+      <include src="components/softSkillBlock.html"
+               locals='{
+                        "text": "Kommunikation",
+                        "percentage": "20",
+                        "color": "#d62728"
+                        }'
+      ></include>
+      <include src="components/softSkillBlock.html"
+               locals='{
+                        "text": "Humor",
+                        "percentage": "2",
+                        "color": "#9467bd"
+                        }'
+      ></include>
+      <include src="components/softSkillBlock.html"
+               locals='{
+                        "text": "Neugier",
+                        "percentage": "10",
+                        "color": "#7f7f7f"
+                        }'
+      ></include>
+    </div>
   </div>
 </section>
