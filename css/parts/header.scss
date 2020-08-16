@@ -1,4 +1,6 @@
 header {
+  z-index: 1;
+
   nav {
     background: #a1c4fd;
     display: flex;
@@ -12,13 +14,10 @@ header {
       margin-left: 1rem;
       margin-right: 1rem;
       font-size: 1.25rem;
-    }
 
-    a:hover {
-      color: black;
+      &:hover {
+        color: black;
+      }
     }
-
   }
-
-
 }
