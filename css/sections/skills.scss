@@ -16,8 +16,16 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-right: 5rem;
-  margin-left: 5rem;
+
+  @include xsm {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  @include md {
+    margin-right: 5rem;
+    margin-left: 5rem;
+  }
 }
 
 .skill-block {

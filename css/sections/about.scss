@@ -10,8 +10,18 @@
 
 #about-me {
   width: 100%;
-  margin-left: 4rem;
-  margin-right: 4rem;
+
+  justify-content: center;
+
+  @include xsm {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  @include md {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
 
   p {
     margin-bottom: 2.5rem;
@@ -43,10 +53,8 @@
   @include xsm {
     width: 7.5rem;
     height: 7.5rem;
-  }
-
-  @include md {
-    margin: 0.25rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
   }
 
   @include lg {
