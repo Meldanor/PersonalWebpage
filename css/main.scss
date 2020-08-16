@@ -1,3 +1,9 @@
 @import "normalize.scss";
 @import "cross-browser.scss";
-@import "layout";
+@import "layout.scss";
+@import "sections.scss";
+@import "parts.scss";
+
+html {
+  font-family: Helvetica, serif;
+}

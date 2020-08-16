@@ -1,0 +1,24 @@
+header {
+  nav {
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      color: #505050;
+      font-weight: bold;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+    }
+
+    a:hover {
+      color: black;
+    }
+
+  }
+
+
+}
