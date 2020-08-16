@@ -34,6 +34,7 @@
   align-items: center;
   justify-content: center;
   border: gray 1px solid;
+  transition: box-shadow 0.2s ease-out;
 
   @include xsm {
     width: 7.5rem;
@@ -56,4 +57,8 @@
     width: 75%;
     background-color: black;
   }
+}
+
+.soft-skill-block:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
