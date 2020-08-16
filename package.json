@@ -19,6 +19,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "animate.css": "^4.1.0",
     "date-fns": "^2.15.0"
   }
 }

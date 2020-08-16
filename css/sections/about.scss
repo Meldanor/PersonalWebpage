@@ -3,7 +3,7 @@
 }
 
 #about-container {
-  background-color: #e5e9f2;
+  background-color: $light-gray;
   margin: auto;
   display: flex;
 }
@@ -12,6 +12,11 @@
   width: 100%;
   margin-left: 4rem;
   margin-right: 4rem;
+
+  p {
+    margin-bottom: 2.5rem;
+    font-size: larger;
+  }
 }
 
 #about-soft-skills {
