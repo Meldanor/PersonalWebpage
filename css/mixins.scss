@@ -31,3 +31,7 @@
     @content;
   }
 }
+
+@mixin box-border {
+  border: $gray 1px solid;
+}

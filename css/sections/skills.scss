@@ -36,7 +36,7 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
-  border: gray 1px solid;
+  @include box-border;
   transition: box-shadow 0.2s ease-out;
 
   &:hover {
@@ -65,6 +65,10 @@
         margin-right: 1rem;
       }
     }
+
+    & > h3 {
+      font-weight: initial;
+    }
   }
 
   &-text {
@@ -73,6 +77,7 @@
     margin-right: 0.5rem;
     text-align: justify;
     font-size: larger;
+    font-weight: lighter;
   }
 }
 
