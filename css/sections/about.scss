@@ -6,21 +6,38 @@
   background-color: $light-gray;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
+
+  .break {
+    @include xsm {
+      height: 0;
+      flex-basis: 100%;
+    }
+
+    @include md {
+      display: none;
+      flex-basis: 0;
+    }
+  }
 }
 
 #about-me {
-  width: 100%;
-
-  justify-content: center;
 
   @include xsm {
     margin-right: 1rem;
     margin-left: 1rem;
   }
 
+  @include sm {
+    flex-basis: 100%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   @include md {
     margin-left: 4rem;
     margin-right: 4rem;
+    flex-basis: 40%;
   }
 
   p {
@@ -30,9 +47,24 @@
 }
 
 #about-soft-skills {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
+
+  @include xsm {
+    flex-basis: 100%;
+    margin-top: 5rem;
+  }
+
+  @include sm {
+    flex-basis: 100%;
+    margin-top: 2rem;
+  }
+
+  @include md {
+    margin-top: 0;
+    flex-basis: 40%;
+  }
+
 }
 
 .soft-skill-block {
@@ -48,10 +80,17 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   @include xsm {
-    width: 7.5rem;
+    width: 8rem;
     height: 7.5rem;
-    margin-left: 2rem;
-    margin-right: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  @include sm {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
   }
 
   @include lg {
