@@ -2,10 +2,6 @@
   background-color: $light-gray;
   display: flex;
   flex-direction: column;
-
-  > h1 {
-
-  }
 }
 
 .skill-container {
@@ -34,22 +30,21 @@
   flex-flow: column;
   justify-content: center;
   @include box-border;
+  border-radius: 5px;
   transition: box-shadow 0.2s ease-out;
-
-  &:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   &-title {
-    height: 100%;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-top: 0.25rem;
+    height: 50%;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    margin-top: 0.5rem;
 
     &-container {
       display: flex;
       align-items: center;
-      height: 50px;
+      height: 50%;
+
 
       & > h2 {
         font-size: 2rem;
@@ -65,15 +60,17 @@
 
     & > h3 {
       font-weight: initial;
+      margin-top: 1rem;
+      margin-bottom: 0;
     }
   }
 
   &-text {
-    height: 100%;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    height: 50%;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
     text-align: justify;
-    font-size: larger;
+    font-size: large;
     font-weight: lighter;
   }
 }
