@@ -9,7 +9,7 @@
     "build": "NODE_ENV=production parcel build index.html",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "docker build -t melsite:$npm_package_version . && docker save melsite:$npm_package_version | bzip2 | ssh root@www.meldanor.me 'bunzip2 | docker load'"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
