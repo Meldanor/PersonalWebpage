@@ -24,8 +24,8 @@
 #about-me {
 
   @include xsm {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
   }
 
   @include sm {
@@ -49,10 +49,11 @@
 #about-soft-skills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 
   @include xsm {
     flex-basis: 100%;
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 
   @include sm {
@@ -80,11 +81,11 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   @include xsm {
-    width: 8rem;
-    height: 7.5rem;
+    width: 9rem;
+    height: 9rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
   }
 
   @include sm {
@@ -104,6 +105,10 @@
     padding-bottom: 0.25rem;
     width: 75%;
     background-color: black;
+
+    @include xsm {
+      width: 100%
+    }
   }
 }
 
