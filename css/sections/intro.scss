@@ -2,6 +2,11 @@
   background-image: linear-gradient(to bottom, #a1c4fd 0%, white 100%);
   display: flex;
   flex-direction: column;
+
+  & > div:nth-child(1) {
+    margin: auto;
+    text-align: center;
+  }
 }
 
 .avatar {
