@@ -3,7 +3,7 @@
     <h2 class="pt-2 text-4xl font-semibold">
       Kilian Gärtner
     </h2>
-    <h3 class="pt-2 text-2xl font-semibold1">
+    <h3 class="pt-2 text-2xl font-semibold">
       Software Entwickler bei
       <a
         class="text-green-500"

@@ -17,3 +17,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style>
+  body {
+    font-family: Trirong,serif;
+  }
+</style>
