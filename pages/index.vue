@@ -1,19 +1,19 @@
 <template>
   <div class="container mx-auto">
     <starter />
-    <description />
+    <self-description />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Description from '~/components/Description.vue'
 import Starter from '~/components/Starter.vue'
+import SelfDescription from '~/components/SelfDescription.vue'
 
 export default Vue.extend({
   components: {
-    Starter,
-    Description
+    SelfDescription,
+    Starter
   }
 })
 </script>
