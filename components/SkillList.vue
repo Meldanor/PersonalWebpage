@@ -1,0 +1,104 @@
+<template>
+  <div class="pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 justify-items-stretch w-full">
+    <skill name="Java" icon="/logos/java.png">
+      <template #skill-list>
+        Java 5-11, SpringBoot, Quarkus, Gradle, Maven3, JDBI, JUnit, Hibernate, IntelliJ IDEA, JavaFX
+      </template>
+      <template #description>
+        Mehr als zehn Jahre meine Hauptsprache für verschiedenste Anwendungsbereiche. Ich kann damit wartbare und
+        performante Projekte selbstständig entwickeln.
+      </template>
+    </skill>
+    <skill name="Elixir" icon="/logos/elixir.png">
+      <template #skill-list>
+        Phoenix, ExUnit, Ecto, CachEx, Absinthe, JSON-API
+      </template>
+      <template #description>
+        Ideal für Web Entwicklung, da das Tooling sehr gut ist und viele Probleme elegant gelöst werden können.
+        Seit zwei Jahren hauptberuflich in kleinen bis mittel großen Projekten.
+      </template>
+    </skill>
+    <skill name="Frontend" icon="/logos/vue-js.png">
+      <template #skill-list>
+        Vue 2/3, CSS3, Javascript, Typescript, HTML5, SPA, Bootstrap, Bulma, WebPack 4, Tailwind CSS
+      </template>
+      <template #description>
+        Einfache Websiten in reinem HTML5 und mittel komplexe SPAs kann ich mit Vue umsetzen.
+      </template>
+    </skill>
+    <skill name="Datenbanken" icon="/logos/postgresql.png">
+      <template #skill-list>
+        PostgreSQL, MySQL/MariaDb, SQLite, ClickHouse, FullTextSearch
+      </template>
+      <template #description>
+        Fast jedes meiner Projete benötigte eine Datenbank. Ich kann aus komplexen Anforderungen
+        die Datenmodelle erstellen und eine Empfehlung geeigneter Datenbanken geben.
+      </template>
+    </skill>
+    <skill name="Software Engineer" icon="/logos/openapi.png">
+      <template #skill-list>
+        OpenAPI, Requirement Engineering, SCRUM / Kanban, Team- und Projektleitung
+      </template>
+      <template #description>
+        Konzeptionelle Skills, die ich in allen Projekten verwende.
+        Entwicklung von Konzepten mit Vor- und Nachteilanalyse anhand von Anforderung,
+        Empfehlung von Tech Stacks, Schätzung von Aufwänden.
+      </template>
+    </skill>
+    <skill name="Monitoring" icon="/logos/prometheus.png">
+      <template #skill-list>
+        Prometheus, Grafana, ELK-Stack, Logback, slf4j
+      </template>
+      <template #description>
+        Überwachung von Applikationen anhand verschiedener Metriken sowie Darstellung der Daten in Grafana und
+        Einstellung von Alerts. Vereinfachtes Debugging und Fehlersuche durch intensives und intelligentes Logging.
+      </template>
+    </skill>
+    <skill name="Serversysteme" icon="/logos/docker.png">
+      <template #skill-list>
+        Linux (Ubuntu/Debian), UNRaid, Docker+Docker-Compose, Dokku, Cloud
+      </template>
+      <template #description>
+        Aufsetzen von Systemen, Installation und Konfiguration von Serverprogrammen und Verwendung moderner
+        Technologien. Ich würde aber keinen missionskritischen Server hauptverantwortlich betreuen.
+      </template>
+    </skill>
+    <skill name="Clean Code" icon="/logos/git.png">
+      <template #skill-list>
+        Git, GitLab CI, Atlassian Toolchain, Sonar Lint, Static-Code Analyse
+      </template>
+      <template #description>
+        Erstellen von CI/CD-Jobs für verschiedene Projekten, um Code Qualität zu erhöhen. Spezialisierung in Docker.
+      </template>
+    </skill>
+    <skill name="Betriebssysteme" icon="/logos/tux.png">
+      <template #skill-list>
+        Linux (Ubuntu/Debian/PopOS!), Windows, MacOS, iOS, Raspian
+      </template>
+      <template #description>
+        Ich habe auf Windows und OS X Systemen entwickelt, verwende Linux für Server und nutze private iOS Geräte. Am
+        liebsten entwickel ich wegen nativer Docker Unterstützung unter Linux.
+      </template>
+    </skill>
+    <skill name="Interessen" icon="/logos/rust.png">
+      <template #skill-list>
+        Rust, COBOL, BigData, Video/Audio-Codecs, Informationsvisualisierung, Robotik, Kubernetes
+      </template>
+      <template #description>
+        Thematiken, die ich interessant finde, aber nur Grundwissen habe. Hier würde ich meine Erfahrung aus den
+        anderen Skills einsetzen, um mich schnell einzuarbeiten.
+      </template>
+    </skill>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Skill from '~/components/Skill.vue'
+
+export default Vue.extend({
+  components: {
+    Skill
+  }
+})
+</script>

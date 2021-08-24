@@ -1,0 +1,36 @@
+<template>
+  <div class="skill-block">
+    <div class="flex align-middle">
+      <img :src="icon" :alt="name" class="w-8 h-8">
+      <h3 class="text-3xl font-bold">
+        {{ name }}
+      </h3>
+    </div>
+    <div class="flex flex-col justify-evenly h-4/5">
+      <div class="h-1/4">
+        <slot name="skill-list" />
+      </div>
+      <hr>
+      <div class="h-1/4 text-base text-justify">
+        <slot name="description" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    name: { type: String, required: true },
+    icon: { type: String, required: true }
+  }
+})
+</script>
+
+<style>
+.skill-block {
+  @apply border border-gray-200 shadow h-96 p-4 text-lg
+}
+</style>

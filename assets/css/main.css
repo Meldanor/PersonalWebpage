@@ -5,19 +5,3 @@
   font-display: swap;
   src: url('assets/fonts/Trirong-Regular.ttf') format('truetype');
 }
-
-@font-face {
-  font-family: 'Trirong';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('assets/fonts/Trirong-Italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Trirong';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('assets/fonts/Trirong-Bold.ttf') format('truetype');
-}
