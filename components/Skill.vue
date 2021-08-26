@@ -2,7 +2,7 @@
   <div class="skill-block">
     <div class="flex align-middle">
       <img :src="icon" :alt="name" class="w-8 h-8">
-      <h3 class="text-3xl font-bold">
+      <h3 class="text-3xl font-bold pl-2 h-8">
         {{ name }}
       </h3>
     </div>

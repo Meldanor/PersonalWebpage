@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <starter />
     <self-description />
-    <hr>
+    <hr class="my-16">
     <skill-list />
   </div>
 </template>

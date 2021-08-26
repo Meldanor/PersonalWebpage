@@ -2,7 +2,7 @@
   <div class="pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 justify-items-stretch w-full">
     <skill name="Java" icon="/logos/java.png">
       <template #skill-list>
-        Java 5-11, SpringBoot, Quarkus, Gradle, Maven3, JDBI, JUnit, Hibernate, IntelliJ IDEA, JavaFX
+        Java 5-16, SpringBoot, Quarkus, Gradle, Maven, JUnit, Hibernate, JavaFX
       </template>
       <template #description>
         Mehr als zehn Jahre meine Hauptsprache für verschiedenste Anwendungsbereiche. Ich kann damit wartbare und
@@ -11,7 +11,7 @@
     </skill>
     <skill name="Elixir" icon="/logos/elixir.png">
       <template #skill-list>
-        Phoenix, ExUnit, Ecto, CachEx, Absinthe, JSON-API
+        Phoenix, ExUnit, Ecto, Absinthe
       </template>
       <template #description>
         Ideal für Web Entwicklung, da das Tooling sehr gut ist und viele Probleme elegant gelöst werden können.
@@ -63,6 +63,20 @@
         Technologien. Ich würde aber keinen missionskritischen Server hauptverantwortlich betreuen.
       </template>
     </skill>
+    <skill name="DevOps" icon="/logos/github-actions.svg">
+      <template #skill-list>
+        Docker, GitLab CI, Docker-Compose, Bamboo, Sonar Lint, Static-Code Analyse
+      </template>
+      <template #description>
+        <p>
+          <i>You build it, you run it.</i>
+        </p>
+        <p>
+          Jeder gute Entwickler sollte in der Lage sein, seinen Änderungen jederzeit zuverlässig
+          selber deployen zu können.
+        </p>
+      </template>
+    </skill>
     <skill name="Clean Code" icon="/logos/git.png">
       <template #skill-list>
         Git, GitLab CI, Atlassian Toolchain, Sonar Lint, Static-Code Analyse
@@ -76,13 +90,13 @@
         Linux (Ubuntu/Debian/PopOS!), Windows, MacOS, iOS, Raspian
       </template>
       <template #description>
-        Ich habe auf Windows und OS X Systemen entwickelt, verwende Linux für Server und nutze private iOS Geräte. Am
-        liebsten entwickel ich wegen nativer Docker Unterstützung unter Linux.
+        Ich habe unter Windows, OS X und Linux entwickelt, verwende Linux für Server und benutzt private iOS Geräte.
+        Derzeit entwickel ich am liebsten wegen nativer Docker Unterstützung unter Linux.
       </template>
     </skill>
     <skill name="Interessen" icon="/logos/rust.png">
       <template #skill-list>
-        Rust, COBOL, BigData, Video/Audio-Codecs, Informationsvisualisierung, Robotik, Kubernetes
+        Rust, COBOL, BigData, Video/Audio-Codecs, Informationsvisualisierung, Robotik, Kubernetes, ARM
       </template>
       <template #description>
         Thematiken, die ich interessant finde, aber nur Grundwissen habe. Hier würde ich meine Erfahrung aus den
