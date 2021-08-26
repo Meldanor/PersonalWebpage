@@ -6,7 +6,6 @@
     <h3 class="pt-2 text-2xl font-semibold">
       Software Entwickler bei
       <a
-        class="text-green-500"
         href="https://eves.de"
         target="_blank"
         rel="noreferrer"
