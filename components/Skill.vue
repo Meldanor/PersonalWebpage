@@ -6,12 +6,12 @@
         {{ name }}
       </h3>
     </div>
-    <div class="flex flex-col justify-evenly h-4/5">
-      <div class="h-1/4">
+    <div class="flex flex-col justify-evenly h-auto sm:h-4/5">
+      <div class="h-1/4 sm:pt-0 pt-4">
         <slot name="skill-list" />
       </div>
       <hr>
-      <div class="h-1/4 text-base text-justify">
+      <div class="h-1/4 sm:pt-0 pt-4 text-base text-justify">
         <slot name="description" />
       </div>
     </div>
@@ -31,6 +31,7 @@ export default Vue.extend({
 
 <style>
 .skill-block {
-  @apply border border-gray-200 shadow h-96 p-4 text-lg
+  border-color: rgba(195, 224, 241, var(--tw-border-opacity));
+  @apply border shadow h-full sm:h-96 p-4 text-lg
 }
 </style>

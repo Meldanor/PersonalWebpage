@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex justify-center items-center w-full">
     <div id="lol" class="absolute w-full top-0 left-0 h-full" />
-    <div class="flex flex-col items-center z-20">
+    <div class="flex flex-col items-center text-center z-20">
       <img src="/avatar.jpg" class="rounded-full" alt="kilian gärtner logo">
       <h1 class="mt-3 text-5xl ">
         Moin, Ich bin Kilian!

@@ -2,10 +2,10 @@
   <div class="container mx-auto">
     <starter />
     <self-description />
-    <hr class="my-16">
+    <hr class="hidden sm:block my-16">
     <skill-list />
-    <hr class="my-16">
-    <timeline />
+    <hr class="hidden sm:block my-16">
+    <timeline class="my-16 sm:my-0" />
   </div>
 </template>
 

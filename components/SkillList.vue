@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 justify-items-stretch w-full">
+  <div class="pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 justify-items-stretch w-full px-2 sm:px-0">
     <skill name="Java" icon="/logos/java.png">
       <template #skill-list>
         Java 5-16, SpringBoot, Quarkus, Gradle, Maven, JUnit, Hibernate, JavaFX
