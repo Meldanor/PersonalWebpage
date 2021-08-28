@@ -218,7 +218,7 @@
           </p>
         </template>
       </timeline-event>
-      <timeline-event start-date="24.03.1991">
+      <timeline-event start-date="24.03.1991" last>
         <template #title>
           Storchlieferung an meine Eltern
         </template>

@@ -15,9 +15,10 @@
       </div>
     </div>
 
-    <div class="line">
+    <div v-if="!last" class="line">
       <div class="dot" />
     </div>
+    <div v-else class="dot md:left-20 left-1" />
 
     <div class="ml-10 md:ml-14 w-full">
       <div class="text-xl font-bold">
@@ -44,7 +45,8 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     startDate: { type: String, required: true },
-    endDate: { type: String, default: null }
+    endDate: { type: String, default: null },
+    last: { type: Boolean, default: false }
   },
   computed: {
     dateHorizontal () {
