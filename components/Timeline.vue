@@ -165,7 +165,7 @@
           Nachhilfe in Java Programmierung und grundlegenden Algorithmen und Datenstrukturen
         </template>
       </timeline-event>
-      <timeline-event start-date="01.2011" end-date="01.2015">
+      <timeline-event start-date="2011" end-date="2015">
         <template #title>
           <a target="_blank" rel="noreferrer" href="https://www.minestar.de/">Minestar (Minecraft Server)</a>
         </template>
@@ -201,7 +201,7 @@
         </template>
         <template #description />
       </timeline-event>
-      <timeline-event start-date="01.2003" end-date="01.2010">
+      <timeline-event start-date="2003" end-date="2010">
         <template #title>
           Gymnasium
         </template>
@@ -216,6 +216,11 @@
           <p class="mb-2">
             Jugend forscht Landeswettbewerb Berlin zum Thema <i>Suche nach optimalen Weg in Gebäuden</i>
           </p>
+        </template>
+      </timeline-event>
+      <timeline-event start-date="24.03.1991">
+        <template #title>
+          Storchlieferung an meine Eltern
         </template>
       </timeline-event>
     </div>

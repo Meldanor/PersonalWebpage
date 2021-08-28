@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center relative">
     <!-- This is for bigger devices -->
-    <div class="text-sm text-center hidden md:contents w-20">
+    <div class="text-sm text-center hidden md:block self-start w-20 h-full">
       <div class="flex flex-col self-start mt-0.5">
         <div v-if="endDate">
           {{ endDate }}
@@ -19,7 +19,7 @@
       <div class="dot" />
     </div>
 
-    <div class="ml-10 md:ml-14">
+    <div class="ml-10 md:ml-14 w-full">
       <div class="text-xl font-bold">
         <slot name="title" />
       </div>
