@@ -4,14 +4,21 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'personal_website',
+    title: 'Kilian Gärtner Portfolio',
     htmlAttrs: {
       lang: 'de'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Persönliches Portfolio von Kilian Gärtner - Software Engineer in Java und Elixir Fullstack Apps mit 10+ Jahren Berufserfahrung.' },
+      { hid: 'robots', name: 'robots', content: 'index, follow' },
+      { hid: 'og:type', name: 'og:type', content: 'website' },
+      { hid: 'og:title', name: 'og:title', content: 'Kilian Gärtner Portfolio' },
+      { hid: 'og:description', name: 'og:description', content: 'Persönliches Portfolio von Kilian Gärtner - Software Engineer in Java und Elixir Fullstack Apps mit 10+ Jahren Berufserfahrung.' },
+      { hid: 'og:url', name: 'robots', content: 'https://www.kilian-gaertner.dev' },
+      { hid: 'og:site_name', name: 'robots', content: 'Kilian Gärtner Portfolio' },
+      { hid: 'robots', name: 'robots', content: 'index, follow' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
