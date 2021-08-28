@@ -1,6 +1,6 @@
 <template>
   <div class="mx-1 md:w-2/3">
-    <h3 class="text-2xl font-bold mb-16">
+    <h3 class="text-2xl font-bold ml-4 md:ml-0 mb-8">
       Werdegang
     </h3>
     <div class="relative mt-5 text-left">

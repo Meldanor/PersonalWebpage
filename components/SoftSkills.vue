@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h3 class="text-center pt-7 text-2xl font-semibold">
+    <h3 class="ml-4 md:ml-0 text-left md:text-center pt-7 text-2xl font-semibold">
       Soft Skills
     </h3>
-    <div class="flex flex-wrap justify-center mt-11">
+    <div class="flex flex-wrap justify-center mt-4 md:mt-11">
       <div class="bg-yellow-500 soft-skill-block">
         <p>
           Lernfähigkeit

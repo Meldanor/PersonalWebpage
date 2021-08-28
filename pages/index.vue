@@ -2,9 +2,9 @@
   <div class="container mx-auto">
     <starter />
     <self-description />
-    <hr class="hidden sm:block my-16">
+    <hr class="hidden sm:block my-8">
     <skill-list />
-    <hr class="hidden sm:block my-16">
+    <hr class="hidden sm:block my-8">
     <timeline class="my-16 sm:my-0" />
     <hr class="my-4">
     <Footer />
