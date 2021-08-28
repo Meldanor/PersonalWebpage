@@ -37,7 +37,7 @@
           class="mx-1 inline-block"
           target="_blank"
           rel="noreferrer"
-          href="mailto:contact@meldanor.me"
+          href="mailto:contact@kilian-gaertner.dev"
         >
           <img src="/logos/at-solid.svg" alt="email logo">
         </a>
