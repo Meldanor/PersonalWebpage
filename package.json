@@ -1,31 +1,32 @@
 {
   "name": "personal_website",
   "version": "1.0.0",
-  "description": "A personal website of Kilian Gärtner",
-  "keywords": [
-    "personal",
-    "website",
-    "software engineer",
-    "Kilian Gärtner"
-  ],
-  "license": "MIT",
-  "author": "Kilian Gärtner",
+  "private": true,
   "scripts": {
-    "build": "NODE_ENV=production parcel build index.html",
-    "dev": "parcel index.html --open",
-    "start": "npm run build && npm run dev",
-    "deploy": "docker build -t melsite:$npm_package_version . && docker save melsite:$npm_package_version | bzip2 | ssh root@www.meldanor.me 'bunzip2 | docker load'"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-compress": "^2.0.2",
-    "posthtml-include": "^1.4.3",
-    "posthtml-modules": "^0.6.2",
-    "sass": "^1.26.10",
-    "typescript": "^3.9.7"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:fix": "yarn lint:js --fix",
+    "lint": "yarn lint:js",
+    "deploy": "docker build -t personal_website:$npm_package_version . && docker save personal_website:$npm_package_version | bzip2 | ssh root@kilian-gaertner.dev 'bunzip2 | docker load'"
   },
   "dependencies": {
-    "animate.css": "^4.1.0",
-    "date-fns": "^2.15.0"
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.14.7",
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/tailwindcss": "^4.2.0",
+    "eslint": "^7.29.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.12.1",
+    "nuxt-compress": "^5.0.0",
+    "postcss": "^8.3.5"
   }
 }
