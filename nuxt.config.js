@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'personal_website',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'de'
     },
     meta: [
       { charset: 'utf-8' },

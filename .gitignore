@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-# Include your project-specific ignores in this file
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-# Useful .gitignore templates: https://github.com/github/gitignore
-node_modules
-dist
-.cache
-.idea
-*.iml
-=======
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
@@ -98,4 +88,5 @@ sw.*
 
 # Vim swap files
 *.swp
->>>>>>> c63b70e (Initial commit)
+# Trick to have auto complete in IntelliJ IDEA
+/.tailwind/
