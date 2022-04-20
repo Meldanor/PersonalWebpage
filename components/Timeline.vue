@@ -4,18 +4,81 @@
       Werdegang
     </h3>
     <div class="relative mt-5 text-left">
-      <timeline-event start-date="04.2021" end-date="Jetzt">
+      <timeline-event start-date="06.2022" end-date="Jetzt">
+        <template #title>
+          <a target="_blank" rel="noreferrer" href="https://www.i22.de/">
+            i22 Digitalagentur GmbH
+          </a>
+        </template>
+        <template #sub-title>
+          Senior Software Entwickler
+        </template>
+        <template #description>
+          <div>
+            <h5>
+              Produktdatenbank in Elixir
+            </h5>
+            <ul>
+              <li>
+                Entwicklung mit Elixir und Phoenix Framework für eine Produktdatenbank
+              </li>
+              <li>
+                Weiteres kommt...
+              </li>
+            </ul>
+          </div>
+        </template>
+      </timeline-event>
+      <timeline-event start-date="04.2021" end-date="06.2022">
         <template #title>
           <a target="_blank" rel="noreferrer" href="https://eves.de/">
             eves_information technology AG
           </a>
         </template>
         <template #sub-title>
-          Software Entwickler
+          Software Entwickler / Architect
         </template>
         <template #description>
-          <p />
           <div>
+            <h5>
+              Software-Architekt
+            </h5>
+            <ul>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.isaqb.org/certifications/cpsa-certifications/cpsa-foundation-level/"
+                >CPSA Foundation Level Zerfikat</a>
+              </li>
+              <li>
+                Konzipieren und Schätzen von Kundenanfragen
+              </li>
+              <li>
+                Beraten und Begleiten bei der Umsetzung
+              </li>
+            </ul>
+            <h5>
+              Cloud-native Development mit Nest.JS
+            </h5>
+            <ul>
+              <li>
+                Entwicklung mit <a target="_blank" rel="noreferrer" href="https://aerosys.io/">Aerosys</a> an einer
+                Community für das Projekt Goose.
+              </li>
+              <li>
+                Entwicklung und teilweise Leitung eines internationalen Teams für Backend- und Frontendentwickung
+              </li>
+              <li>
+                Nest.JS mit GraphQl und Typescript in einem Monorepo mit NX
+              </li>
+              <li>
+                Native-Cloud Development in AWS mit S3, Aurora, Lambda und AWS-CDK 2.x
+              </li>
+              <li>
+                React im Frontend mit Next.JS
+              </li>
+            </ul>
             <h5>
               Front-und Backend-Entwicklung fachlich in der KFZ-Homologation
             </h5>
@@ -25,6 +88,9 @@
               </li>
               <li>
                 Atlassian Toolchain und Miro
+              </li>
+              <li>
+                Oracle 11c
               </li>
             </ul>
             <h5>
@@ -188,7 +254,8 @@
             Durchschnittsnote 2,2
           </p>
           <p>
-            Bachelorarbeit: Latenzverringerung bei der interaktiven Visualisierung von Simulationsdaten aus der Astronomie
+            Bachelorarbeit: Latenzverringerung bei der interaktiven Visualisierung von Simulationsdaten aus der
+            Astronomie
           </p>
         </template>
       </timeline-event>
