@@ -24,7 +24,7 @@
       </skill>
       <skill name="Frontend" icon="/logos/vue-js.png">
         <template #skill-list>
-          Vue 2/3, CSS3, Javascript, Typescript, HTML5, SPA, Bootstrap, Bulma, WebPack 4, Tailwind CSS
+          Vue 2/3, CSS3, Javascript, Typescript, HTML5, SPA, Bootstrap, Bulma, WebPack 4, Tailwind CSS, Nest.JS
         </template>
         <template #description>
           Einfache Websiten in reinem HTML5 und mittel komplexe SPAs kann ich mit Vue umsetzen.
@@ -60,7 +60,7 @@
       </skill>
       <skill name="Serversysteme" icon="/logos/docker.png">
         <template #skill-list>
-          Linux (Ubuntu/Debian), UNRaid, Docker+Docker-Compose, Dokku, Cloud
+          Linux (Ubuntu/Debian), UNRaid, Docker+Docker-Compose, Dokku, AWS / AWS-CDK
         </template>
         <template #description>
           Aufsetzen von Systemen, Installation und Konfiguration von Serverprogrammen und Verwendung moderner
@@ -69,7 +69,7 @@
       </skill>
       <skill name="DevOps" icon="/logos/github-actions.svg">
         <template #skill-list>
-          Docker, GitLab CI, Docker-Compose, Bamboo, Sonar Lint, Static-Code Analyse
+          Docker(-Compose), GitLab CI, Bamboo, Sonar Lint, Static-Code Analyse, GitHub Actions, AWS Codepipeline
         </template>
         <template #description>
           <p>
