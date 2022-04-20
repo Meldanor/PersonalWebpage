@@ -2,6 +2,7 @@
   <div class="container mx-auto">
     <starter />
     <self-description />
+    <documents class="mt-8" />
     <hr class="hidden sm:block my-8">
     <skill-list />
     <hr class="hidden sm:block my-8">
@@ -18,9 +19,11 @@ import SelfDescription from '~/components/SelfDescription.vue'
 import SkillList from '~/components/SkillList.vue'
 import Timeline from '~/components/Timeline.vue'
 import Footer from '~/components/Footer.vue'
+import Documents from '~/components/Documents.vue'
 
 export default Vue.extend({
   components: {
+    Documents,
     Footer,
     Timeline,
     SkillList,
