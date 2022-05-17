@@ -1,7 +1,6 @@
 <template>
   <a class="open-file" target="_blank" rel="noreferrer" :href="url">
     {{ displayName }}
-    <img src="/logos/195px-PDF_file_icon.svg.png" class="w-5 h-5 ml-1">
   </a>
 </template>
 
@@ -24,10 +23,11 @@ export default Vue.extend({
 
 <style>
 .open-file {
-
-  height: 2rem;
-
-  border-color: rgba(195, 224, 241, var(--tw-border-opacity));
-  @apply border text-2xl mx-2 flex items-center
+  background-color: rgba(195, 224, 241, var(--tw-border-opacity));
+  @apply w-52 h-16 p-2 text-black font-semibold transition-colors flex items-center justify-center text-center mx-2
+}
+.open-file:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(152, 202, 231, var(--tw-border-opacity));
 }
 </style>
