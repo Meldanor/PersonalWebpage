@@ -1,6 +1,6 @@
 {
   "name": "personal_website",
-  "version": "1.2",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
