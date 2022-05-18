@@ -24,7 +24,7 @@ export default Vue.extend({
 <style>
 .open-file {
   background-color: rgba(195, 224, 241, var(--tw-border-opacity));
-  @apply w-52 h-16 p-2 text-black font-semibold transition-colors flex items-center justify-center text-center mx-2
+  @apply w-52 h-16 p-2 text-black font-semibold transition-colors flex items-center justify-center text-center m-2 lg:my-0
 }
 .open-file:hover {
   --tw-bg-opacity: 1;
