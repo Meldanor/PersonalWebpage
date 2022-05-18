@@ -6,10 +6,10 @@
     <h3 class="pt-2 text-2xl font-semibold">
       Software Entwickler bei
       <a
-        href="https://eves.de"
+        href="https://www.i22.de/"
         target="_blank"
         rel="noreferrer"
-      >eves_it</a>
+      >i22</a>
     </h3>
     <div class="pt-4 text-lg tracking-wide text-justify">
       <p>
@@ -28,7 +28,7 @@
         Besonders interessant für mich sind Projekte mit Anforderungen an Skalierbarkeit und Performance.
       </p>
     </div>
-    <blockquote class="relative pt-8 text-xl italic">
+    <blockquote class="relative pt-8 text-xl italic text-justify">
       <p class="mb-4">
         Wer aufhört, besser zu werden, hat aufgehört, gut zu sein.
       </p>
