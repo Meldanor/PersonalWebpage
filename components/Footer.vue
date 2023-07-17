@@ -5,9 +5,9 @@
     </p>
     <p>
       Build with
-      <a target="_blank" rel="noreferrer" href="https://tailwindcss.com/">Tailwind CSS 2.0</a>
+      <a target="_blank" rel="noreferrer" href="https://tailwindcss.com/">Tailwind CSS 3.0</a>
       and
-      <a target="_blank" rel="noreferrer" href="https://nuxtjs.org/">NuxtJS 2.X</a>
+      <a target="_blank" rel="noreferrer" href="https://nuxtjs.org/">NuxtJS 3.X</a>
     </p>
     <p>
       <a target="_blank" rel="noreferrer" href="https://github.com/Meldanor/PersonalWebpage">Sourcecode</a>

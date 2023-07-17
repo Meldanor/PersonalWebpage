@@ -110,14 +110,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-import Skill from '~/components/Skill.vue'
-
-export default Vue.extend({
-  components: {
-    Skill
-  }
-})
-</script>

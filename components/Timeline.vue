@@ -293,13 +293,6 @@
     </div>
   </div>
 </template>
-<script>
-import TimelineEvent from '~/components/TimelineEvent'
-
-export default {
-  components: { TimelineEvent }
-}
-</script>
 
 <style>
 ul {

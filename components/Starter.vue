@@ -2,7 +2,7 @@
   <div class="h-screen flex justify-center items-center w-full">
     <div id="lol" class="absolute w-full top-0 left-0 h-full" />
     <div class="flex flex-col items-center text-center z-20">
-      <img src="/avatar.jpg" class="rounded-full" alt="kilian gärtner logo">
+      <img src="/avatar_2022.jpg" class="rounded-full" alt="kilian gärtner logo">
       <h1 class="mt-3 text-5xl ">
         Moin, Ich bin Kilian!
       </h1>
@@ -45,12 +45,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend()
-</script>
 
 <style>
 #lol {

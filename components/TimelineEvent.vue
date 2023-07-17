@@ -39,25 +39,24 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
 
-export default Vue.extend({
-  props: {
-    startDate: { type: String, required: true },
-    endDate: { type: String, default: null },
-    last: { type: Boolean, default: false }
-  },
-  computed: {
-    dateHorizontal () {
-      if (this.endDate) {
-        return this.endDate + ' - ' + this.startDate
-      } else {
-        return this.startDate
-      }
-    }
+import { computed } from 'vue'
+
+const props = defineProps({
+  startDate: String,
+  endDate: String,
+  last: Boolean
+});
+
+const dateHorizontal = computed(() => {
+  if (props.endDate) {
+  return props.endDate + ' - ' + props.startDate
+  } else {
+  return props.startDate
   }
-})
+});
+
 </script>
 
 <style>

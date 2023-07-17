@@ -18,15 +18,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    name: { type: String, required: true },
-    icon: { type: String, required: true }
-  }
-})
+<script setup lang="ts">
+  const props = defineProps({
+    name: String,
+    icon: String
+  });
 </script>
 
 <style>

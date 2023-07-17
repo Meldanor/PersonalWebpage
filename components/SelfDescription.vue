@@ -4,16 +4,3 @@
     <soft-skills class="lg:w-1/2 w-full md:pl-5" />
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-import Description from '~/components/Description.vue'
-import SoftSkills from '~/components/SoftSkills.vue'
-
-export default Vue.extend({
-  components: {
-    SoftSkills,
-    Description
-  }
-})
-</script>
