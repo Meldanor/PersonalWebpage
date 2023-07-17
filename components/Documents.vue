@@ -4,34 +4,25 @@
       Lebenslauf / Zertifikate
     </legend>
     <div class="flex flex-wrap justify-center">
-      <OpenFile
+      <DocumentsOpenFile
         display-name="Lebenslauf"
         url="/files/Lebenslauf_Kilian_Gaertner_2022.pdf"
       />
-      <OpenFile
+      <DocumentsOpenFile
         display-name="Software-Architect (ISAQB-F)"
         url="/files/SoftwareArchitect_Certificate_2.pdf"
       />
-      <OpenFile
+      <DocumentsOpenFile
         display-name="AWS Cloud Practitioner Essentials"
         url="/files/AWS Training & Certification - Certificate of Completion.pdf"
       />
-      <OpenFile
+      <DocumentsOpenFile
         display-name="SCRUM PSM"
         url="/files/Kilian_Gaertner_Professional Scrum Master I.pdf"
       />
     </div>
   </fieldset>
 </template>
-
-<script lang="ts">
-
-import OpenFile from '~/components/documents/OpenFile.vue'
-
-export default {
-  components: { OpenFile }
-}
-</script>
 
 <style>
 .download-content {

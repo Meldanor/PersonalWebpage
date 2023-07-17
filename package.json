@@ -1,33 +1,19 @@
 {
-  "name": "personal_website",
-  "version": "1.2.2",
+  "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:fix": "yarn lint:js --fix",
-    "lint": "yarn lint:js",
-    "deploy:good-internet": "docker build -t personal_website:$npm_package_version . && docker save personal_website:$npm_package_version | gzip | pv | ssh root@kilian-gaertner.dev 'docker load'",
-    "deploy:bad-internet": "docker build -t personal_website:$npm_package_version . && docker save personal_website:$npm_package_version | bzip2 | pv | ssh root@kilian-gaertner.dev 'docker load'"
-  },
-  "dependencies": {
-    "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.14.7",
-    "@nuxt/types": "^2.15.7",
-    "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config-typescript": "^6.0.1",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "@nuxtjs/tailwindcss": "^4.2.0",
-    "eslint": "^7.29.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1",
-    "nuxt-compress": "^5.0.0",
-    "postcss": "^8.3.5"
+    "@nuxt/devtools": "latest",
+    "@types/node": "^18.16.19",
+    "autoprefixer": "^10.4.14",
+    "nuxt": "^3.6.3",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3"
   }
 }

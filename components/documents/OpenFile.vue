@@ -4,21 +4,11 @@
   </a>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    displayName: {
-      type: String,
-      required: true
-    },
-    url: {
-      type: String,
-      required: true
-    }
-  }
-})
+<script setup lang="ts">
+  const props = defineProps({
+    displayName: String,
+    url: String
+  });
 </script>
 
 <style>
