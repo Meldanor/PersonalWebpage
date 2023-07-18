@@ -4,7 +4,7 @@
       Kilian Gärtner
     </h2>
     <h3 class="pt-2 text-2xl font-semibold">
-      Software Entwickler bei
+      Senior Software Entwickler / Architect bei
       <a
         href="https://www.i22.de/"
         target="_blank"
@@ -13,7 +13,7 @@
     </h3>
     <div class="pt-4 text-lg tracking-wide text-justify">
       <p>
-        Als Software Ingenieur konzipiere und entwickele seit über 12 Jahren Software für verschiedenste Anwendungsbereiche.
+        Als Software Ingenieur konzipiere und entwickele seit über <b>14 Jahren</b> Software für verschiedenste Anwendungsbereiche.
         Ich bin neuen Technologien sehr aufgeschlossen, bilde mich privat ständig weiter.
         So kann ich dem Kunden einen geeigneten Tech Stack anbieten.
       </p>

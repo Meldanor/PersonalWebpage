@@ -4,6 +4,24 @@
       Skills
     </h2>
     <div class="pt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 justify-items-stretch w-full px-2 sm:px-0">
+      <skill name="Elixir" icon="/logos/elixir.png">
+        <template #skill-list>
+          Phoenix, ExUnit, Ecto, Absinthe, Credo, Dialyzer
+        </template>
+        <template #description>
+          Ideal für Web Entwicklung, da das Tooling sehr gut ist und viele Probleme elegant gelöst werden können.
+          Seit vier Jahren hauptberuflich in kleinen bis mittel großen Projekten.
+        </template>
+      </skill>
+      <skill name="WebDev" icon="/logos/vue-js.png">
+        <template #skill-list>
+          Vue 2/3, Nuxt, Svelte, JavaScript, TypeScript, SPA, Bootstrap, Tailwind CSS
+        </template>
+        <template #description>
+          Komplexe, interaktiven Websiten und ein breites Wissen über Libraries und Frameworks. SvelteKit ist derzeit 
+          mein Favourite.
+        </template>
+      </skill>
       <skill name="Java" icon="/logos/java.png">
         <template #skill-list>
           Java 5-16, SpringBoot, Quarkus, Gradle, Maven, JUnit, Hibernate, JavaFX
@@ -13,26 +31,9 @@
           performante Projekte selbstständig entwickeln.
         </template>
       </skill>
-      <skill name="Elixir" icon="/logos/elixir.png">
-        <template #skill-list>
-          Phoenix, ExUnit, Ecto, Absinthe
-        </template>
-        <template #description>
-          Ideal für Web Entwicklung, da das Tooling sehr gut ist und viele Probleme elegant gelöst werden können.
-          Seit zwei Jahren hauptberuflich in kleinen bis mittel großen Projekten.
-        </template>
-      </skill>
-      <skill name="Frontend" icon="/logos/vue-js.png">
-        <template #skill-list>
-          Vue 2/3, CSS3, Javascript, Typescript, HTML5, SPA, Bootstrap, Bulma, WebPack 4, Tailwind CSS, Nest.JS
-        </template>
-        <template #description>
-          Einfache Websiten in reinem HTML5 und mittel komplexe SPAs kann ich mit Vue umsetzen.
-        </template>
-      </skill>
       <skill name="Datenbanken" icon="/logos/postgresql.png">
         <template #skill-list>
-          PostgreSQL, MySQL/MariaDb, SQLite, ClickHouse, FullTextSearch
+          PostgreSQL, ElasticSearch, MySQL/MariaDb, SQLite, ClickHouse
         </template>
         <template #description>
           Fast jedes meiner Projete benötigte eine Datenbank. Ich kann aus komplexen Anforderungen
@@ -69,7 +70,7 @@
       </skill>
       <skill name="DevOps" icon="/logos/github-actions.svg">
         <template #skill-list>
-          Docker(-Compose), GitLab CI, Bamboo, Sonar Lint, Static-Code Analyse, GitHub Actions, AWS Codepipeline
+          Docker, Kubernetes, OpenShift, GitLab CI/CD, GitHub Actions, AWS Codepipeline
         </template>
         <template #description>
           <p>
@@ -77,7 +78,7 @@
           </p>
           <p>
             Jeder gute Entwickler sollte in der Lage sein, seinen Änderungen jederzeit zuverlässig
-            selber deployen zu können.
+            selber deployen zu können. Auch beherrsche ich Techniken zur Orchestierung von Containern.
           </p>
         </template>
       </skill>
@@ -86,7 +87,8 @@
           Git, GitLab CI, Atlassian Toolchain, Sonar Lint, Static-Code Analyse
         </template>
         <template #description>
-          Erstellen von CI/CD-Jobs für verschiedene Projekten, um Code Qualität zu erhöhen. Spezialisierung in Docker.
+          Verständnis von guten, wartbaren Code und Bewertung von langfristigen Code Entscheidungen. Ich etabliere Code Guidelines
+          für Projekte und enforce diese auch.
         </template>
       </skill>
       <skill name="Betriebssysteme" icon="/logos/tux.png">

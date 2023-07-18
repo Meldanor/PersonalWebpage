@@ -4,10 +4,10 @@
     <div class="flex flex-col items-center text-center z-20">
       <img src="/avatar_2022.jpg" class="rounded-full" alt="kilian gärtner logo">
       <h1 class="mt-3 text-5xl ">
-        Moin, Ich bin Kilian!
+        Moin, Kilian hier :)
       </h1>
       <h2 class="mt-3 text-3xl">
-        Software Ingenieur
+        Senior Software Ingenieur
       </h2>
       <h3 class="mt-3 text-lg">
         (Nickname Meldanor)
