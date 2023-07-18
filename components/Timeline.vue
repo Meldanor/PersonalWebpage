@@ -20,10 +20,64 @@
             </h5>
             <ul>
               <li>
-                Entwicklung mit Elixir und Phoenix Framework für eine Produktdatenbank
+                Zentrale Produktdatenbank, die Daten an die Shops über GraphQl ausspielt
               </li>
               <li>
-                Weiteres kommt...
+                Automatisches Importieren von Daten aus heteregonen Datenquellen
+              </li>
+              <li>
+                Synchronisierung von Postgres und ElasticSearch
+              </li>
+              <li>
+                Übernahme und Reverse Engineering des bisherigen Projektes
+              </li>
+              <li>
+                Größere Rewrites von zentralen Komponeenten, u.a. Rewrite des Auth Systems
+              </li>
+              <li>
+                Weiter- und Neuentwicklung von Features, Verbesserungen im Bereich Wartung, Performance und Stabilität
+              </li>
+            </ul>
+            <h5>
+              Neuentwicklung einer Buchungssoftware mit nestjs und OpenShift
+            </h5>
+            <ul>
+              <li>
+                Aufsetzen und Dokumentieren von Software Architekturen für ein Microservice, Eventbasiertes System
+              </li>
+              <li>
+                Deployment auf einem OpenShift Cluster
+              </li>
+            </ul>
+            <h5>
+              Fachliche Verantwortung im Recruiting
+            </h5>
+            <ul>
+              <li>
+                Aufsetzen von Job Profilen für Ausschreibungen
+              </li>
+              <li>
+                Fachliche Gespräche mit Kandidaten
+              </li>
+              <li>
+                Aufsetzen von Probearbeiten und Durchführen von praktischen Tests
+              </li>
+              <li>
+                Beratungen, ob Kandidaten eingestellt werden oder nicht
+              </li>
+              <li>
+                Auf Englisch und Deutsch
+              </li>
+            </ul>
+            <h5>
+              Generative AI
+            </h5>
+            <ul>
+              <li>
+                Evaluierung von AI-Tools wie ChatGPT und LLVM für den Einsatz in der Firma
+              </li>
+              <li>
+                Mitwirken an Ausgestaltung von Prototypen
               </li>
             </ul>
           </div>
