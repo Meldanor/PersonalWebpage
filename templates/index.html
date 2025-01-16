@@ -29,15 +29,15 @@
       </p>
     </div>
     <h2>Working History</h2>
-    <div class="flex flex-col gap-4 ">
+    <div class="flex flex-col gap-6">
       {% set section = get_section(path="workplaces/_index.md") %}
       {% for page in section.pages %}
-      <div class="flex">
-        <div class="w-1/2 text-sm">
+      <div class="grid  grid-cols-[1fr_2fr]">
+        <div class="text-sm content-center">
           <span>{{ page.extra.startYear }}</span> – <span>{{ page.extra.endYear }}</span>
         </div>
-        <div class="w-full">
-          <h3 class="!mt-0">{{ page.extra.position }} - {{ page.extra.company }}</h3>
+        <h3 class="!my-0">{{ page.extra.position }} - {{ page.extra.company }}</h3>
+        <div class="col-start-2">
           {{ page.content | safe }}
           <div class="flex flex-wrap text-sm gap-2">
             {% for tag in page.extra.technologies %}
@@ -50,15 +50,13 @@
       {% endfor %}
     </div>
     <h2>Projects History</h2>
-    <div class="flex flex-col gap-4 ">
+    <div class="flex flex-col gap-6">
       {% set section = get_section(path="projects/_index.md") %}
       {% for page in section.pages %}
-      <div class="flex">
-        <div class="w-1/2">
-          <div class="w-32 h-32 bg-green-900"></div>
-        </div>
-        <div class="w-full">
-          <h3 class="!mt-0">{{ page.title }} </h3>
+      <div class="grid grid-cols-[1fr_2fr]">
+        <div class="row-span-2 w-32 h-32 bg-green-900 mt-2"></div>
+        <h3 class="!my-0">{{ page.title }} </h3>
+        <div class="col-start-2">
           {{ page.content | safe }}
           <div class="flex flex-wrap text-sm gap-2">
             {% for tag in page.extra.technologies %}
@@ -68,6 +66,7 @@
           </div>
         </div>
       </div>
+
       {% endfor %}
     </div>
   </div>
