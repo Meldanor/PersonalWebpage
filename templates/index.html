@@ -1,4 +1,74 @@
 {% extends "base.html" %}
 {% block content %}
-<p>Hello World</p>
-{% endblock content %}
+<div class="lg:flex lg:gap-4 lg:justify-between">
+  <div class="lg:sticky lg:top-20 w-full h-full">
+    <h1 class="text-5xl !mb-2 tracking-tight">Kilian Gärtner</h1>
+    <h2 class="font-light tracking-tight !mt-0">Software Engineer</h2>
+    <p>I build backend systems and lead teams</p>
+  </div>
+  <div class="w-full">
+    <div class="">
+      TODO: Here something about me
+      <p class="!m-0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur risus eget nisl facilisis, quis luctus
+        risus porta. Donec sit amet porta eros, eu ullamcorper mi. Fusce aliquam nulla non gravida tristique. Nulla
+        congue
+        lectus vel ipsum varius feugiat. Quisque venenatis auctor odio.
+      </p>
+      <p>
+        Curabitur nulla justo, vulputate sed leo id, convallis laoreet lorem. Aliquam sit amet elit magna. Quisque nec
+        pharetra nisi. Cras ut elit suscipit, porta sem sed, posuere tellus. Vestibulum nec augue at mauris volutpat
+        lobortis.
+      </p>
+      <p>
+        Cras in nisl urna. Duis sit amet fermentum ex, eu euismod magna. Donec semper cursus ipsum at faucibus. In quis
+        risus nibh. Maecenas eu orci lobortis, laoreet sem non, sollicitudin erat. Vestibulum tincidunt consequat urna
+        sit
+        amet convallis. Maecenas malesuada dolor neque, et pulvinar nulla auctor a. Curabitur ultricies dignissim
+        dignissim.
+      </p>
+    </div>
+    <h2>Working History</h2>
+    <div class="flex flex-col gap-4 ">
+      {% set section = get_section(path="workplaces/_index.md") %}
+      {% for page in section.pages %}
+      <div class="flex">
+        <div class="w-1/2 text-sm">
+          <span>{{ page.extra.startYear }}</span> – <span>{{ page.extra.endYear }}</span>
+        </div>
+        <div class="w-full">
+          <h3 class="!mt-0">{{ page.extra.position }} - {{ page.extra.company }}</h3>
+          {{ page.content | safe }}
+          <div class="flex flex-wrap text-sm gap-2">
+            {% for tag in page.extra.technologies %}
+            <span
+              class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <h2>Projects History</h2>
+    <div class="flex flex-col gap-4 ">
+      {% set section = get_section(path="projects/_index.md") %}
+      {% for page in section.pages %}
+      <div class="flex">
+        <div class="w-1/2">
+          <div class="w-32 h-32 bg-green-900"></div>
+        </div>
+        <div class="w-full">
+          <h3 class="!mt-0">{{ page.title }} </h3>
+          {{ page.content | safe }}
+          <div class="flex flex-wrap text-sm gap-2">
+            {% for tag in page.extra.technologies %}
+            <span
+              class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endblock content %}
