@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="lg:flex lg:gap-4 lg:justify-between">
-  <div class="lg:sticky lg:top-20 lg:w-2/5 h-full">
+  <div class="lg:sticky lg:top-20 lg:w-2/5 h-full lg:mb-0 mb-8">
     <h1 class="text-5xl !mb-2 tracking-tight">Kilian Gärtner</h1>
     <h2 class="font-light tracking-tight !mt-0">Software Engineer <br>M.Sc. in computer Science</h2>
     <p>I build scalable backend systems and lead teams</p>
+    {% set image = resize_image(path="/images/avatar_2022.png", height=100, width=100, op="fit", format="webp",
+    quality=90) %}
+    <img alt="avatar image of meldanor. A round head with big friendly eyes and a red mouth"
+      class="!my-0 rounded-full drop-shadow-md" src="{{ image.url }}" />
   </div>
   <div class="lg:w-3/5">
     <div class="no-top-margin-first">
@@ -17,7 +21,7 @@
       {% for page in section.pages %}
       <div class="grid  grid-cols-[1fr_2fr]">
         <div class="text-sm content-center">
-          <span>{{ page.extra.startYear }}</span> – <span>{{ page.extra.endYear }}</span>
+          {{ page.extra.startYear }} - {{ page.extra.endYear }}
         </div>
         <h3 class="!my-0">{{ page.extra.position }} - {{ page.extra.company }}</h3>
         <div class="col-start-2">
