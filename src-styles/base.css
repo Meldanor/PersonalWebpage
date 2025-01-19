@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.no-top-margin-first>p:first-child {
-    @apply !mt-0
-}
-
 @layer base {
     @font-face {
         font-family: InterVariable;
