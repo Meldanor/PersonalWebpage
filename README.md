@@ -35,3 +35,11 @@ Inspiration how to combine zola and tailwind.
 ### [Flowbite Darkmode](https://flowbite.com/docs/customize/dark-mode/)
 
 Implementation of a dark mode toggle
+
+### [Brittany Chiang](https://brittanychiang.com/)
+
+Heavy inspiration for the design
+
+### [Inter](https://rsms.me/inter/)
+
+The font used by the website
