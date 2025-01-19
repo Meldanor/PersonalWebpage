@@ -44,7 +44,7 @@
     <div class="flex flex-col gap-6">
       {% set section = get_section(path="career/_index.md") %}
       {% for page in section.pages %}
-      <div class="grid  grid-cols-[1fr_2fr]">
+      <div class="grid grid-cols-[1fr_2fr]">
         <div class="text-sm content-center">
           {{ page.extra.startYear }} - {{ page.extra.endYear }}
         </div>
@@ -61,14 +61,23 @@
       </div>
       {% endfor %}
     </div>
-    <h2>Projects History</h2>
+    <h2>Projects</h2>
     <div class="flex flex-col gap-6">
       {% set section = get_section(path="projects/_index.md") %}
       {% for page in section.pages %}
+      <!-- TODO Convert GRID to flex colum and second colum is also a flex -->
       <div class="grid grid-cols-[1fr_2fr]">
-        <div class="row-span-2 w-32 h-32 bg-green-900 mt-2"></div>
+        <div class="mt-2 row-span-2">
+          {% set image_path = "/images/projects/" ~ page.extra.image %}
+          {% set image = resize_image(path=image_path, height=150, width=150,
+          op="fit",format="webp",quality=90) %}
+          <a class="hover:brightness-125" href="{{ get_url(path=image_path) }}" title="Project Image in original size"
+            aria-label="Project Image in original size (opens in a new tab)" target="_blank" rel="noreferrer noopener">
+            <img class="!my-0" alt="{{ page.extra.image_alt }}" src="{{ image.url }}">
+          </a>
+        </div>
         <h3 class="!my-0">{{ page.title }} </h3>
-        <div class="col-start-2">
+        <div class="[&>p]:my-0">
           {{ page.content | safe }}
           <div class="flex flex-wrap text-sm gap-2">
             {% for tag in page.extra.technologies %}
@@ -77,6 +86,22 @@
             {% endfor %}
           </div>
         </div>
+        {% if page.extra.repostory or page.extra.link_to_project %}
+        <div class="col-start-2 row-start-3 flex gap-4">
+          {% if page.extra.repository %}
+          <a href="{{ page.extra.repository }}" title="{{ page.title }} repository"
+            aria-label="{{ page.title }} repository (opens in a new tab)" target="_blank"
+            rel="noreferrer noopener">Repository</a>
+          {% endif %}
+          {% if page.extra.link_to_project %}
+
+          <a href="{{ page.extra.link_to_project }}" title="{{ page.title }} project site"
+            aria-label="{{ page.title }} project site (opens in a new tab)" target="_blank"
+            rel="noreferrer noopener">Project site</a>
+          {% endif %}
+
+        </div>
+        {% endif %}
       </div>
 
       {% endfor %}
