@@ -3,7 +3,7 @@ date = "2024-10-27"
 title = "HeroOutOfNecessity"
 
 [extra]
-image = "godot-projects/Hero Out Of Necessity.png"
+image = "godot-projects/HeroOutofNecessity.png"
 image_alt = "Screenshot of WIP game  Hero out of Necessity. Shows some ugly pixel art of the character in a room with game elements to test out like damage sources and an NPC to talk to."
 technologies = ["Godot", "Game Dev", "Pixel Art", "Abandoned"]
 # repository = https://github.com/Meldanor/Hero-Out-of-Necessity

@@ -51,7 +51,7 @@
         <h3 class="!my-0">{{ page.extra.position }} - {{ page.extra.company }}</h3>
         <div class="col-start-2">
           {{ page.content | safe }}
-          <div class="flex flex-wrap text-sm gap-2">
+          <div class="flex flex-wrap text-sm gap-y-2">
             {% for tag in page.extra.technologies %}
             <span
               class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
@@ -62,12 +62,11 @@
       {% endfor %}
     </div>
     <h2>Projects</h2>
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-8">
       {% set section = get_section(path="projects/_index.md") %}
       {% for page in section.pages %}
-      <!-- TODO Convert GRID to flex colum and second colum is also a flex -->
-      <div class="grid grid-cols-[1fr_2fr]">
-        <div class="mt-2 row-span-2">
+      <div class="flex flex-row justify-between">
+        <div class="w-1/3">
           {% set image_path = "/images/projects/" ~ page.extra.image %}
           {% set image = resize_image(path=image_path, height=125, width=125,
           op="fit",format="webp",quality=90) %}
@@ -76,31 +75,33 @@
             <img class="!my-0" alt="{{ page.extra.image_alt }}" src="{{ image.url }}">
           </a>
         </div>
-        <h3 class="!my-0">{{ page.title }} </h3>
-        <div class="[&>p]:my-0">
-          {{ page.content | safe }}
-          <div class="flex flex-wrap text-sm gap-2">
+        <div class="flex flex-col gap-4 w-2/3">
+          <h3 class="!my-0">{{ page.title }} </h3>
+          <div class="[&>p]:my-0">
+            {{ page.content | safe }}
+          </div>
+          <div class="flex flex-wrap text-sm gap-y-2">
             {% for tag in page.extra.technologies %}
             <span
               class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
             {% endfor %}
           </div>
-        </div>
-        {% if page.extra.repository or page.extra.link_to_project %}
-        <div class="col-start-2 row-start-3 flex gap-4">
-          {% if page.extra.repository %}
-          <a href="{{ page.extra.repository }}" title="{{ page.title }} repository"
-            aria-label="{{ page.title }} repository (opens in a new tab)" target="_blank"
-            rel="noreferrer noopener">Repository</a>
-          {% endif %}
+          {% if page.extra.repository or page.extra.link_to_project %}
+          <div class="col-start-2 row-start-3 flex gap-4">
+            {% if page.extra.repository %}
+            <a href="{{ page.extra.repository }}" title="{{ page.title }} repository"
+              aria-label="{{ page.title }} repository (opens in a new tab)" target="_blank"
+              rel="noreferrer noopener">Repository</a>
+            {% endif %}
 
-          {% if page.extra.link_to_project %}
-          <a href="{{ page.extra.link_to_project }}" title="{{ page.title }} project site"
-            aria-label="{{ page.title }} project site (opens in a new tab)" target="_blank"
-            rel="noreferrer noopener">Project site</a>
+            {% if page.extra.link_to_project %}
+            <a href="{{ page.extra.link_to_project }}" title="{{ page.title }} project site"
+              aria-label="{{ page.title }} project site (opens in a new tab)" target="_blank"
+              rel="noreferrer noopener">Project site</a>
+            {% endif %}
+          </div>
           {% endif %}
         </div>
-        {% endif %}
       </div>
 
       {% endfor %}
