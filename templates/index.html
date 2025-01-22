@@ -4,7 +4,7 @@
   <div class="lg:sticky lg:top-20 lg:w-2/5 h-full lg:mb-0 mb-8">
     <h1 class="text-5xl !mb-2 tracking-tight">Kilian Gärtner</h1>
     <h2 class="font-light tracking-tight !mt-0">Software Engineer <br>M.Sc. Computer Science</h2>
-    <p>I build scalable backend systems and lead teams</p>
+    <p>I build backend systems, lead teams and do small game dev</p>
     {% set image = resize_image(path="/images/avatar_2022.png", height=100, width=100, op="fit", format="webp",
     quality=90) %}
     <img alt="avatar image of meldanor. A round head with big friendly eyes and a red mouth"
@@ -69,9 +69,9 @@
       <div class="grid grid-cols-[1fr_2fr]">
         <div class="mt-2 row-span-2">
           {% set image_path = "/images/projects/" ~ page.extra.image %}
-          {% set image = resize_image(path=image_path, height=150, width=150,
+          {% set image = resize_image(path=image_path, height=125, width=125,
           op="fit",format="webp",quality=90) %}
-          <a class="hover:brightness-125" href="{{ get_url(path=image_path) }}" title="Project Image in original size"
+          <a class="hover:brightness-110" href="{{ get_url(path=image_path) }}" title="Project Image in original size"
             aria-label="Project Image in original size (opens in a new tab)" target="_blank" rel="noreferrer noopener">
             <img class="!my-0" alt="{{ page.extra.image_alt }}" src="{{ image.url }}">
           </a>
@@ -86,20 +86,19 @@
             {% endfor %}
           </div>
         </div>
-        {% if page.extra.repostory or page.extra.link_to_project %}
+        {% if page.extra.repository or page.extra.link_to_project %}
         <div class="col-start-2 row-start-3 flex gap-4">
           {% if page.extra.repository %}
           <a href="{{ page.extra.repository }}" title="{{ page.title }} repository"
             aria-label="{{ page.title }} repository (opens in a new tab)" target="_blank"
             rel="noreferrer noopener">Repository</a>
           {% endif %}
-          {% if page.extra.link_to_project %}
 
+          {% if page.extra.link_to_project %}
           <a href="{{ page.extra.link_to_project }}" title="{{ page.title }} project site"
             aria-label="{{ page.title }} project site (opens in a new tab)" target="_blank"
             rel="noreferrer noopener">Project site</a>
           {% endif %}
-
         </div>
         {% endif %}
       </div>

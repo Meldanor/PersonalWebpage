@@ -10,4 +10,4 @@ repository = "https://github.com/Meldanor/MyApoShunkman"
 link_to_project = "https://youtu.be/Kb57Nzb-TLQ"
 +++
 
-Solution for a mandatory tournament in first year in university. The game was a bomber man clone and inpsired by previous years I developed a cheating AI using Java reflectons with rage memes.
+Solution for a mandatory tournament in first year in university. The game was a bomber man clone and inspired by previous years I developed a cheating AI using Java reflections with rage memes.
