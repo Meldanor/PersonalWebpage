@@ -31,7 +31,7 @@
       {% if page.extra.repository %}
       <td>
         <a href="{{ page.extra.repository }}">
-          {% set svg = load_data(path="icons/icon_External_Link.svg", required=true) %}
+          {% set svg = load_data(path="icons/Icon_External_Link.svg", required=true) %}
           {{ svg | replace(from="<CLASS>", to="text-black dark:text-white w-4 h-4") |safe }}
         </a>
       </td>
@@ -41,7 +41,7 @@
       {% if page.extra.link_to_project %}
       <td>
         <a href="{{ page.extra.link_to_project }}">
-          {% set svg = load_data(path="icons/icon_External_Link.svg", required=true) %}
+          {% set svg = load_data(path="icons/Icon_External_Link.svg", required=true) %}
           {{ svg | replace(from="<CLASS>", to="text-black dark:text-white w-4 h-4") |safe }}
         </a>
         {% else %}
