@@ -9,6 +9,7 @@ technologies = ["Godot", "Game Dev", "Light", "Prototype"]
 # repository = https://github.com/Meldanor/DefeatTheDarkness
 # Maybe I can link the binaries?
 # link_to_project = None
+on_main = true
 +++
 
 The most complete prototype in Godot and the first I would call a game. You have to hold the line against zombies and fire projectiles against them. [Awesome background music by DEgITx](https://www.youtube.com/watch?v=xE6X4nWHY9w).

@@ -8,6 +8,7 @@ image_alt = "3D volume plot of the high velocity cloud data from Bastian Sanders
 technologies = ["Data Visualization", "Simulations", "Data PreProcessing", "Science"]
 # repository = "https://github.com/Project-Phoenix"
 link_to_project = "/documents/2015_BA_Kilian_Gaertner.pdf"
+on_main = true
 +++
 
 *Latency reduction for interactive data visualization of simulation data in astronomy*
