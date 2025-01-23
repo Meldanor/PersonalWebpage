@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<a class="inline-flex items-center gap-2" href="/">
+  {% set svg = load_data(path="icons/Arrow_left.svg", required=true) %}
+  {{ svg | replace(from="<CLASS>", to="text-black dark:text-white w-4 h-4") |safe }}
+    <span>Kilian Gärtner</span>
+</a>
+<h1>Every Projects</h1>
+<p>A near complete list of all projects I can talk about and think they are interesting.</p>
+<table class="table-fixed">
+  <thead>
+    <tr>
+      <th class="w-1/6">Name</th>
+      <th class="w-1/2">Description</th>
+      <th class="w-1/6">Tags</th>
+      <th class="w-1/12">Repository</th>
+      <th class="w-1/12">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for page in section.pages %}
+    <tr>
+      <td class="font-bold">{{ page.title }}</td>
+      <td>{{ page.content | safe }}</td>
+      <td class="flex flex-wrap text-xs gap-y-2">
+        {% for tag in page.extra.technologies %}
+        <span
+          class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
+        {% endfor %}
+      </td>
+      {% if page.extra.repository %}
+      <td>
+        <a href="{{ page.extra.repository }}">
+          {% set svg = load_data(path="icons/icon_External_Link.svg", required=true) %}
+          {{ svg | replace(from="<CLASS>", to="text-black dark:text-white w-4 h-4") |safe }}
+        </a>
+      </td>
+      {% else %}
+      <td>-</td>
+      {% endif %}
+      {% if page.extra.link_to_project %}
+      <td>
+        <a href="{{ page.extra.link_to_project }}">
+          {% set svg = load_data(path="icons/icon_External_Link.svg", required=true) %}
+          {{ svg | replace(from="<CLASS>", to="text-black dark:text-white w-4 h-4") |safe }}
+        </a>
+        {% else %}
+      <td>-</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

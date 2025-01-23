@@ -61,7 +61,8 @@
       </div>
       {% endfor %}
     </div>
-    <h2>Projects</h2>
+    {% set url = get_url(path="@/projects/_index.md") %}
+    <h2>Some Projects / <a href="{{ url }}">All Projects</a></h2>
     <div class="flex flex-col gap-8">
       {% set section = get_section(path="projects/_index.md") %}
       {% for page in section.pages | filter(attribute="extra.on_main", value=true) %}
