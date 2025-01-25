@@ -21,8 +21,8 @@
     {% for page in section.pages %}
     <tr>
       <td class="font-bold">{{ page.title }}</td>
-      <td>{{ page.content | safe }}</td>
-      <td class="flex flex-wrap text-xs gap-y-2">
+      <td class="[&>p]:my-0 py-2">{{ page.content | safe }}</td>
+      <td class="flex flex-wrap py-2 text-xs gap-y-2">
         {% for tag in page.extra.technologies %}
         <span
           class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
