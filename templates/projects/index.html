@@ -7,7 +7,7 @@
 </a>
 <h1>Every Projects</h1>
 <p>A near complete list of all projects I can talk about and think they are interesting.</p>
-<table class="table-fixed">
+<table class="hidden lg:table lg:table-fixed">
   <thead>
     <tr>
       <th class="w-1/6">Name</th>
@@ -51,4 +51,9 @@
     {% endfor %}
   </tbody>
 </table>
+<div class="flex flex-col gap-8 lg:hidden">
+  {% for page in section.pages %}
+  {% include "projects/card.html" %}
+  {% endfor %}
+</div>
 {% endblock %}
