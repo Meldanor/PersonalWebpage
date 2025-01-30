@@ -9,33 +9,7 @@
     quality=90) %}
     <img alt="avatar image of meldanor. A round head with big friendly eyes and a red mouth"
       class="my-0! rounded-full drop-shadow-md" src="{{ image.url }}" />
-    <!-- Socials -->
-    <div class="mt-4 flex gap-4">
-      <a class="block brightness-90 hover:brightness-125" href="https://mastodon.social/@meldanor"
-        title="Mastodon Profile" aria-label="Mastodon Profile (opens in a new tab)" target="_blank"
-        rel="noreferrer noopener">
-        {% set svg = load_data(path="icons/mastodon_logo-purple.svg", required=true) %}
-        <picture class="m-0! [&>svg]:h-8 [&>svg]:w-8">
-          {{svg | safe }}
-        </picture>
-      </a>
-      <a class="block brightness-50 hover:brightness-0 dark:brightness-75 dark:hover:brightness-125"
-        href="https://github.com/Meldanor/" title="GitHub Profile" aria-label="GitHub Profile (opens in a new tab)"
-        target="_blank" rel="noreferrer noopener">
-        {% set svg = load_data(path="icons/github-mark-white.svg", required=true) %}
-        <picture class="m-0! [&>svg]:h-8 [&>svg]:w-8">
-          {{svg | safe }}
-        </picture>
-      </a>
-      <a class="block hover:text-gray-600 dark:text-gray-200 dark:hover:text-white"
-        href="mailto:contact@kilian-gaertner.dev" title="E-Mail me" aria-label="E-Mail" target="_blank"
-        rel="noreferrer noopener">
-        {% set svg = load_data(path="icons/mail_logo-black.svg", required=true) %}
-        <picture class="m-0! [&>svg]:h-8 [&>svg]:w-8">
-          {{svg | safe }}
-        </picture>
-      </a>
-    </div>
+    {% include "main/socials.html" %}
   </div>
   <div class="lg:w-3/5">
     <div class="[&>p:first-child]:mt-0">

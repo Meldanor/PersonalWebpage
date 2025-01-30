@@ -2,7 +2,7 @@
 {% block content %}
 <a class="inline-flex items-center gap-2" href="/">
   {% set svg = load_data(path="icons/Arrow_left.svg", required=true) %}
-  {{ svg | replace(from="<CLASS>", to="text-black dark:text-white w-4 h-4") |safe }}
+  {{ svg | replace(from="<CLASS>", to="text-black dark:text-white w-4 h-4") | safe }}
     <span>Kilian Gärtner</span>
 </a>
 <h1>Every Projects</h1>
