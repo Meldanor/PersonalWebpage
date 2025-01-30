@@ -19,15 +19,17 @@
           {{svg | safe }}
         </picture>
       </a>
-      <a class="block brightness-75 hover:brightness-125" href="https://github.com/Meldanor/" title="GitHub Profile"
-        aria-label="GitHub Profile (opens in a new tab)" target="_blank" rel="noreferrer noopener">
+      <a class="block brightness-50 hover:brightness-0 dark:brightness-75 dark:hover:brightness-125"
+        href="https://github.com/Meldanor/" title="GitHub Profile" aria-label="GitHub Profile (opens in a new tab)"
+        target="_blank" rel="noreferrer noopener">
         {% set svg = load_data(path="icons/github-mark-white.svg", required=true) %}
         <picture class="!m-0 [&>svg]:h-8 [&>svg]:w-8">
           {{svg | safe }}
         </picture>
       </a>
-      <a class="block brightness-75 hover:brightness-125" href="mailto:contact@kilian-gaertner.dev" title="E-Mail me"
-        aria-label="E-Mail" target="_blank" rel="noreferrer noopener">
+      <a class="block hover:text-gray-600 dark:text-gray-200 dark:hover:text-white"
+        href="mailto:contact@kilian-gaertner.dev" title="E-Mail me" aria-label="E-Mail" target="_blank"
+        rel="noreferrer noopener">
         {% set svg = load_data(path="icons/mail_logo-black.svg", required=true) %}
         <picture class="!m-0 [&>svg]:h-8 [&>svg]:w-8">
           {{svg | safe }}
