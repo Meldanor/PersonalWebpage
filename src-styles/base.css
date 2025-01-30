@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source "./templates/**/*.html";
+@source "./content/**/*.md";
+
+@plugin "@tailwindcss/typography" ;
+
+@theme {
+  --font-inter: "InterVariable"
+}
 
 @layer base {
     @font-face {

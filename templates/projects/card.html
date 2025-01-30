@@ -5,11 +5,11 @@
     op="fit",format="webp",quality=90) %}
     <a class="hover:brightness-110" href="{{ get_url(path=image_path) }}" title="Project Image in original size"
       aria-label="Project Image in original size (opens in a new tab)" target="_blank" rel="noreferrer noopener">
-      <img class="!my-0" alt="{{ page.extra.image_alt }}" src="{{ image.url }}">
+      <img class="my-0!" alt="{{ page.extra.image_alt }}" src="{{ image.url }}">
     </a>
   </div>
   <div class="flex flex-col gap-4 w-2/3">
-    <h3 class="!my-0">{{ page.title }} </h3>
+    <h3 class="my-0!">{{ page.title }} </h3>
     <div class="[&>p]:my-0">
       {{ page.content | safe }}
     </div>
