@@ -5,9 +5,20 @@
     {% set meta_title = config.title %}
     {% set meta_description = config.description %}
 
-    {% if page %}
+    {% if section %}
+
+    {% if section.title %}
+    {% set meta_title = section.title ~ ' - ' ~ config.title %}
+    {% endif %}
+
+    {% if section.description %}
+    {% set meta_description = section.description %}
+    {% endif %}
+
+    {% endif %}
+
+    {% if page and page.title %}
     {% set meta_title = page.title ~ ' - ' ~ config.title %}
-    {% set meta_description = page.extra.summary %}
     {% endif %}
 
     <title>{{ meta_title }}</title>
