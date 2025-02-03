@@ -15,12 +15,11 @@ The following software must be installed to develop the website locally:
 
 Start tailwind and
 
-    npx tailwindcss -i src-styles/base.css -o static/styles/main.css --watch & zola serve
+    npm run serve
 
 ### Build
 
-    npx tailwindcss -i src-styles/base.css -o static/styles/main.css --minify
-    zola build
+    npm run build
 
 ## License
 

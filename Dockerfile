@@ -3,14 +3,11 @@ WORKDIR /app-build
 RUN apk add gzip brotli zstd zola
 ADD package-lock.json package.json ./
 RUN npm ci
-ADD src-styles/base.css src-styles/base.css
-ADD config.toml .
 
 # Build blog
 COPY . ./
 
-RUN npx @tailwindcss/cli -i src-styles/base.css -o static/styles/main.css --minify && \
-    zola build
+RUN npm run build
 # Precompress files
 RUN find public/ -path public/processed_images -prune -o -type f -exec sh -c "zstd -q {} && brotli {} && gzip -k {}" \;
 
