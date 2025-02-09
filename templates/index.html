@@ -19,8 +19,16 @@
     {% set url = get_url(path="@/blog/_index.md") %}
     {% set section = get_section(path="blog/posts/_index.md") %}
     {% set page = section.pages | first %}
-    <h2><a href="{{url}}">My Blog</a> - Latest Post</h2>
-    {% include "blog/card.html" %}
+    <h2>Newest Blog / <a href="{{url}}">All</a></h2>
+    <div class="grid grid-cols-[1fr_2fr]">
+      <div class="text-sm content-center">
+        {{ page.date }}
+      </div>
+      <h3 class="my-0!">
+        <a href="{{ page.permalink | safe}}">{{ page.title }}</a>
+      </h3>
+      <p class="col-start-2 my-4!">{{ page.extra.summary }}</p>
+    </div>
     <h2>Career</h2>
     <div class="flex flex-col gap-6">
       {% set section = get_section(path="career/_index.md") %}
