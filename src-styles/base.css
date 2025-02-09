@@ -9,6 +9,8 @@
   --font-inter: "InterVariable"
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
     @font-face {
         font-family: InterVariable;
