@@ -16,6 +16,11 @@
       {% set page = get_page(path="about_me.md") %}
       {{ page.content | safe }}
     </div>
+    {% set url = get_url(path="@/blog/_index.md") %}
+    {% set section = get_section(path="blog/posts/_index.md") %}
+    {% set page = section.pages | first %}
+    <h2><a href="{{url}}">My Blog</a> - Latest Post</h2>
+    {% include "blog/card.html" %}
     <h2>Career</h2>
     <div class="flex flex-col gap-6">
       {% set section = get_section(path="career/_index.md") %}
