@@ -1,6 +1,9 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
 {% block content %}
+<a href={{ get_url(path="/blog" ) }}>
+    <h1 class="text-center underline mb-8! before:content-['←']">Mel's Meinungen</h1>
+</a>
 <article class="p-2">
     <div class="flex align-bottom items-end">
         <h2 class="my-0!">
@@ -36,7 +39,8 @@
     {{ page.content | safe }}
     <hr class="mt-4! mb-8!">
     <p class="text-base">
-        You have questions or want to say something about this topic? Write me! <strong>contact[at]meldanor[dot]me</strong>
+        You have questions or want to say something about this topic? Write me!
+        <strong>contact[at]meldanor[dot]me</strong>
     </p>
 </article>
 {% endblock content %}

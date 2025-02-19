@@ -1,5 +1,6 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 {% block content %}
+<h1 class="text-center mb-8!">Mel's Meinungen</h1>
 <div class="flex flex-col gap-4 divide-y divide-slate-700">
     {% set section = get_section(path="blog/posts/_index.md") %}
     {% for page in section.pages %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+
+<body
+  class="font-inter bg-white dark:bg-gray-900 grid py-4 mx-auto prose lg:prose-lg prose-stone dark:prose-invert min-h-screen max-w-(--breakpoint-lg)"
+  style="grid-template-rows: auto 1fr auto">
+
+  <header>
+    <div class="not-prose flex flex-row-reverse gap-8 pb-4 px-4">
+      {% include "darkmode_toggle.html" %}
+    </div>
+  </header>
+  <main class="flex-1 p-4">
+    {% block content %} {% endblock %}
+  </main>
+  {% include "footer.html" %}
+</body>
+{% endblock body %}

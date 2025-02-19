@@ -1,63 +1,77 @@
 {% extends "base.html" %}
-{% block content %}
-<div class="lg:flex lg:gap-4 lg:justify-between">
-  <div class="lg:sticky lg:top-20 lg:w-2/5 h-full lg:mb-0 mb-8">
-    <h1 class="text-5xl font-semibold mb-2! tracking-widest">Kilian Gärtner</h1>
-    <h2 class="font-light tracking-tight mt-0!">Software Engineer <br>M.Sc. Computer Science</h2>
-    <p>I build backend systems, lead teams and do small game dev</p>
-    {% set image = resize_image(path="/images/avatar_2022.png", height=100, width=100, op="fit", format="webp",
-    quality=90) %}
-    <img alt="avatar image of meldanor. A round head with big friendly eyes and a red mouth"
-      class="my-0! rounded-full drop-shadow-md" src="{{ image.url }}" />
-    {% include "main/socials.html" %}
-  </div>
-  <div class="lg:w-3/5">
-    <div class="[&>p:first-child]:mt-0">
-      {% set page = get_page(path="about_me.md") %}
-      {{ page.content | safe }}
-    </div>
-    {% set url = get_url(path="@/blog/_index.md") %}
-    {% set section = get_section(path="blog/posts/_index.md") %}
-    {% set page = section.pages | first %}
-    <h2>Newest Blog / <a href="{{url}}">All</a></h2>
-    <div class="grid grid-cols-[1fr_2fr]">
-      <div class="text-sm content-center">
-        {{ page.date }}
-      </div>
-      <h3 class="my-0!">
-        <a href="{{ page.permalink | safe}}">{{ page.title }}</a>
-      </h3>
-      <p class="col-start-2 my-4!">{{ page.extra.summary }}</p>
-    </div>
-    <h2>Career</h2>
-    <div class="flex flex-col gap-6">
-      {% set section = get_section(path="career/_index.md") %}
-      {% for page in section.pages %}
-      <div class="grid grid-cols-[1fr_2fr]">
-        <div class="text-sm content-center">
-          {{ page.extra.startYear }} - {{ page.extra.endYear }}
-        </div>
-        <h3 class="my-0!">{{ page.extra.position }} - {{ page.extra.company }}</h3>
-        <div class="col-start-2">
-          {{ page.content | safe }}
-          <div class="flex flex-wrap text-sm gap-y-2">
-            {% for tag in page.extra.technologies %}
-            <span
-              class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% set url = get_url(path="@/projects/_index.md") %}
-    <h2>Some Projects / <a href="{{ url }}">All Projects</a></h2>
-    <div class="flex flex-col gap-8">
-      {% set section = get_section(path="projects/_index.md") %}
+{% block body %}
 
-      {% for page in section.pages | filter(attribute="extra.on_main", value=true) %}
-      {% include "projects/card.html" %}
-      {% endfor %}
+<body
+  class="font-inter bg-white dark:bg-gray-900 grid py-4 mx-auto prose prose-stone dark:prose-invert min-h-screen max-w-(--breakpoint-xl)"
+  style="grid-template-rows: auto 1fr auto">
+
+  <header>
+    <div class="not-prose flex flex-row-reverse gap-8 pb-4 px-4">
+      {% include "darkmode_toggle.html" %}
     </div>
-  </div>
-  {% endblock content %}
+  </header>
+  <main class="flex-1 p-4">
+    <div class="lg:flex lg:gap-4 lg:justify-between">
+      <div class="lg:sticky lg:top-20 lg:w-2/5 h-full lg:mb-0 mb-8">
+        <h1 class="text-5xl font-semibold mb-2! tracking-widest">Kilian Gärtner</h1>
+        <h2 class="font-light tracking-tight mt-0!">Software Engineer <br>M.Sc. Computer Science</h2>
+        <p>I build backend systems, lead teams and do small game dev</p>
+        {% set image = resize_image(path="/images/avatar_2022.png", height=100, width=100, op="fit", format="webp",
+        quality=90) %}
+        <img alt="avatar image of meldanor. A round head with big friendly eyes and a red mouth"
+          class="my-0! rounded-full drop-shadow-md" src="{{ image.url }}" />
+        {% include "main/socials.html" %}
+      </div>
+      <div class="lg:w-3/5">
+        <div class="[&>p:first-child]:mt-0">
+          {% set page = get_page(path="about_me.md") %}
+          {{ page.content | safe }}
+        </div>
+        {% set url = get_url(path="@/blog/_index.md") %}
+        {% set section = get_section(path="blog/posts/_index.md") %}
+        {% set page = section.pages | first %}
+        <h2>Newest Blog / <a href="{{url}}">All</a></h2>
+        <div class="grid grid-cols-[1fr_2fr]">
+          <div class="text-sm content-center">
+            {{ page.date }}
+          </div>
+          <h3 class="my-0!">
+            <a href="{{ page.permalink | safe}}">{{ page.title }}</a>
+          </h3>
+          <p class="col-start-2 my-4!">{{ page.extra.summary }}</p>
+        </div>
+        <h2>Career</h2>
+        <div class="flex flex-col gap-6">
+          {% set section = get_section(path="career/_index.md") %}
+          {% for page in section.pages %}
+          <div class="grid grid-cols-[1fr_2fr]">
+            <div class="text-sm content-center">
+              {{ page.extra.startYear }} - {{ page.extra.endYear }}
+            </div>
+            <h3 class="my-0!">{{ page.extra.position }} - {{ page.extra.company }}</h3>
+            <div class="col-start-2">
+              {{ page.content | safe }}
+              <div class="flex flex-wrap text-sm gap-y-2">
+                {% for tag in page.extra.technologies %}
+                <span
+                  class="bg-green-100 text-green-800 font-medium me-2 px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-300">{{tag}}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% set url = get_url(path="@/projects/_index.md") %}
+        <h2>Some Projects / <a href="{{ url }}">All Projects</a></h2>
+        <div class="flex flex-col gap-8">
+          {% set section = get_section(path="projects/_index.md") %}
+
+          {% for page in section.pages | filter(attribute="extra.on_main", value=true) %}
+          {% include "projects/card.html" %}
+          {% endfor %}
+        </div>
+      </div>
+  </main>
+  {% include "footer.html" %}
+</body>
+{% endblock body %}
