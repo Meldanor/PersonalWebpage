@@ -30,10 +30,10 @@
         {% set url = get_url(path="@/blog/_index.md") %}
         {% set section = get_section(path="blog/posts/_index.md") %}
         {% set page = section.pages | first %}
-        <h2>Newest Blog / <a href="{{url}}">All</a></h2>
+        <h2 class="after:content-['_↗']"><a href="{{url}}">My Blog</a></h2>
         <div class="grid grid-cols-[1fr_2fr]">
           <div class="text-sm content-center">
-            {{ page.date }}
+            {{ page.date }} (Newest)
           </div>
           <h3 class="my-0!">
             <a href="{{ page.permalink | safe}}">{{ page.title }}</a>
