@@ -2,7 +2,7 @@ name: deploy-website
 
 on:
   push:
-    branches: [ "rewrite/zola" ]
+    branches: [ "master" ]
 
 env:
   # Use docker.io for Docker Hub if empty
