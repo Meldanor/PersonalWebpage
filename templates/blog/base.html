@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+
+<body
+  class="font-inter bg-white dark:bg-gray-900 grid py-4 mx-auto prose lg:prose-lg prose-stone dark:prose-invert min-h-screen max-w-(--breakpoint-lg)"
+  style="grid-template-rows: auto 1fr auto">
+
+  <header>
+    <div class="not-prose flex gap-2 pb-4 px-4">
+      <a href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+        <img class="h-8 w-8 my-0!" alt="RSS Feed" src="{{ get_url(path='icons/rss_icon.webp' )}}">
+      </a>
+      <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+        <img class="h-8 w-8 my-0!" alt="Atom Feed" src="{{ get_url(path='icons/atom_icon.webp' )}}">
+      </a>
+      <div class="ml-auto">
+        {% include "darkmode_toggle.html" %}
+      </div>
+    </div>
+  </header>
+  <main class="flex-1 p-4">
+    {% block content %} {% endblock %}
+  </main>
+  {% include "footer.html" %}
+</body>
+{% endblock body %}

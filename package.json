@@ -1,20 +1,14 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "version": "2.0.0",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+  "name": "personal_website",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@types/node": "^18.16.19",
-    "autoprefixer": "^10.4.14",
-    "nuxt": "^3.6.3",
-    "postcss": "^8.4.26",
-    "tailwindcss": "^3.3.3"
+    "@tailwindcss/cli": "^4.0.0"
+  },
+  "scripts": {
+    "serve": "tailwindcss -i src-styles/base.css -o static/styles/main.css && zola serve & tailwindcss -i src-styles/base.css -o static/styles/main.css --watch",
+    "build": "tailwindcss -i src-styles/base.css -o static/styles/main.css --minify && zola build"
   }
 }
