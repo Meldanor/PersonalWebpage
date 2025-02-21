@@ -8,10 +8,12 @@
   <header>
     <div class="not-prose flex gap-2 pb-4 px-4">
       <a href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
-        <img class="h-8 w-8 my-0!" alt="RSS Feed" src="{{ get_url(path='icons/rss_icon.webp' )}}">
+        <img class="dark:brightness-75 dark:hover:brightness-90 h-8 w-8 my-0!" alt="RSS Feed"
+          src="{{ get_url(path='icons/rss_icon.webp' )}}">
       </a>
       <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
-        <img class="h-8 w-8 my-0!" alt="Atom Feed" src="{{ get_url(path='icons/atom_icon.webp' )}}">
+        <img class="dark:brightness-75 dark:hover:brightness-90 h-8 w-8 my-0!" alt="Atom Feed"
+          src="{{ get_url(path='icons/atom_icon.webp' )}}">
       </a>
       <div class="ml-auto">
         {% include "darkmode_toggle.html" %}
