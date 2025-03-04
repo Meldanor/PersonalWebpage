@@ -2,7 +2,7 @@
 {% block body %}
 
 <body
-  class="font-inter bg-white dark:bg-gray-900 grid py-4 mx-auto prose lg:prose-lg prose-stone dark:prose-invert min-h-screen max-w-(--breakpoint-lg)"
+  class="font-inter bg-white dark:bg-gray-900 grid py-4 mx-auto prose lg:prose-lg prose-stone dark:prose-invert min-h-screen max-w-sm md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg) "
   style="grid-template-rows: auto 1fr auto">
 
   <header>
@@ -20,7 +20,7 @@
       </div>
     </div>
   </header>
-  <main class="flex-1 p-4">
+  <main class="max-w-sm  md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg) flex-1 md:p-4">
     {% block content %} {% endblock %}
   </main>
   {% include "footer.html" %}
