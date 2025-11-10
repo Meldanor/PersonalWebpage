@@ -1,0 +1,97 @@
+---
+import MetaInfo, {
+  type ListEntry,
+} from "@components/gameReviews/MetaInfo.astro";
+import type { CollectionEntry } from "astro:content";
+import Layout from "@layouts/BlogLayout.astro";
+
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+import { useTranslations } from "../../i18n/utils";
+
+const t = useTranslations(Astro.currentLocale);
+
+interface Props {
+  post: CollectionEntry<"gameReviews">;
+}
+
+export async function getStaticPaths() {
+  const reviews = await getCollection("gameReviews");
+  return reviews.map((review) => {
+    return {
+      params: { id: review.id },
+      props: { post: review },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { data } = post;
+
+const gameInfoEntries = [
+  { title: "Game Release", value: data.gameReleaseDate },
+  {
+    title: "Gamplay Span",
+    value: `${data.startedOn} ${t("gameReviews.gameMetaInfo.gameSpan")} ${data.finishedOn}`,
+  },
+  { title: "Finished in hours", value: data.playthroughHours.toString() },
+  { title: "Graphical Settings", value: data.settings },
+  { title: "Plattform", value: data.platform },
+  { title: "Played with", value: data.playedWith },
+] satisfies ListEntry[];
+
+const { pcConfig } = data;
+
+const pcConfigEntries = [
+  { title: "Betriebssystem", value: pcConfig.operatingSystem },
+  { title: "WindowManager", value: pcConfig.windowManager },
+  { title: "GPU", value: pcConfig.gpu },
+  { title: "CPU", value: pcConfig.cpu },
+  { title: "RAM", value: pcConfig.ram },
+  { title: "Monitor", value: pcConfig.monitor },
+  { title: "Mainboard", value: pcConfig.mainboard },
+  { title: "Keyboard", value: pcConfig.keyboard },
+  { title: "Mouse", value: pcConfig.mouse },
+  { title: "Controller", value: pcConfig.controller },
+  { title: "Soundcard", value: pcConfig.soundCard },
+  { title: "Headphones", value: pcConfig.headphone },
+] satisfies ListEntry[];
+
+const { Content } = await render(post);
+---
+
+<Layout
+  title={`${post.data.title} - Kilian Gärtner`}
+  description={post.data.summary}
+>
+  <a class="no-underline" href="/blog">
+    <h1 class="mb-8! text-center underline before:content-['←']">
+      Mel's Meinungen
+    </h1>
+  </a>
+
+  <article class="p-0.5 md:p-2">
+    <div class="flex flex-wrap justify-between">
+      <MetaInfo header="Meta" listEntries={gameInfoEntries} />
+      <MetaInfo header="Gespielt auf" listEntries={pcConfigEntries} />
+    </div>
+    <div class="mt-2 flex items-end align-bottom lg:mt-8">
+      <h2 class="my-0!">
+        {post.data.title}
+      </h2>
+      <span class="ml-auto">
+        {post.data.publishDate}
+      </span>
+    </div>
+    <hr class="my-4!" />
+    <Content />
+    <hr class="mt-4! mb-8!" />
+    <p class="text-base">
+      You have questions or want to share your opinion about this topic?
+      <a href="mailto:herr.kilian.gaertner@gmail.com">Write me an e-mail</a> or send
+      a message over <a href="https://bsky.app/profile/meldanor.bsky.social">
+        BlueSky
+      </a>
+    </p>
+  </article>
+</Layout>

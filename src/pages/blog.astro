@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/BlogLayout.astro";
+
+import PostListItem from "@components/blog/PostListItem.astro";
+
+import { filterNonDraft } from "../contentCollections/utils";
+import { getCollection } from "astro:content";
+
+const blogPosts = (await getCollection("blogEntries")).filter(filterNonDraft);
+
+const gameReviews = (await getCollection("gameReviews")).filter(filterNonDraft);
+
+const posts = [...blogPosts, ...gameReviews].sort(
+  (a, b) =>
+    new Date(b.data.publishDate).getTime() -
+    new Date(a.data.publishDate).getTime(),
+);
+---
+
+<Layout title="Mel's Meinungen" description="Personal blog of Kilian Gärtner">
+  <h1 class="mb-8! text-center">Mel's Meinungen</h1>
+  <div class="flex flex-col gap-4 divide-y divide-slate-700">
+    {posts.map((post) => <PostListItem entry={post} />)}
+  </div>
+</Layout>

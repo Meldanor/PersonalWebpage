@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getLanguageEmoji } from "../../contentCollections/utils";
+
+interface Props {
+  path: string;
+  post: CollectionEntry<"blogEntries"> | CollectionEntry<"gameReviews">;
+}
+
+const { path, post } = Astro.props;
+---
+
+<div class="content-center text-sm">
+  {post.data.publishDate}
+</div>
+<h3 class="my-0!">
+  <a href={path}>{getLanguageEmoji(post)} {post.data.title}</a>
+</h3>
+<p class="col-start-2 my-4!">{post.data.summary}</p>

@@ -1,4 +1,6 @@
-public/
-static/styles/main.css
+.git
+Containerfile
 node_modules
-Dockerfile
+dist
+.astro
+.zed

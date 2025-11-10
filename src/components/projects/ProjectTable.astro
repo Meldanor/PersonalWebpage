@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import ProjectTableRow from "./ProjectTableRow.astro";
+import { useTranslations } from "../../i18n/utils";
+
+const t = useTranslations(Astro.currentLocale);
+
+interface Props {
+  projects: CollectionEntry<"projects">[];
+}
+
+const { projects } = Astro.props;
+---
+
+<table class="hidden lg:table lg:table-fixed">
+  <thead>
+    <tr>
+      <th class="w-1/6">Name</th>
+      <th class="w-1/2">{t("projects.projectTable.description")}</th>
+      <th class="w-1/6">Tags</th>
+      <th class="w-1/12">Repository</th>
+      <th class="w-1/12">{t("projects.shared.projectSite")}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {projects.map((project) => <ProjectTableRow project={project} />)}
+  </tbody>
+</table>

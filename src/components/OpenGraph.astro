@@ -1,0 +1,45 @@
+---
+import ogImage from "@assets/logos/og_image.webp";
+
+interface Props {
+  ogType: "website" | "article";
+  title: string;
+  description: string;
+
+  tags?: string[];
+  publishDate?: Date;
+  modifiedDate?: Date;
+}
+
+const {
+  ogType,
+  title,
+  description,
+  modifiedDate = null,
+  publishDate = null,
+  tags = [],
+} = Astro.props;
+---
+
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage.src} />
+{
+  publishDate && (
+    <meta
+      property="og:article:published_time"
+      content={publishDate?.toISOString()}
+    />
+  )
+}
+{
+  modifiedDate && (
+    <meta
+      property="og:article:modified_time"
+      content={modifiedDate?.toISOString()}
+    />
+  )
+}
+{tags.map((tag) => <meta property="og:article:tag" content={tag} />)}

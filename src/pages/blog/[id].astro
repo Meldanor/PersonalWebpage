@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Layout from "@layouts/BlogLayout.astro";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blogEntries">;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blogEntries");
+  return posts.map((post) => {
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+
+const { Content } = await render(post);
+---
+
+<Layout
+  title={`${post.data.title} - Kilian Gärtner`}
+  description={post.data.summary}
+  seoTags={post.data.seoTags}
+>
+  <a class="no-underline" href="/blog">
+    <h1 class="mb-8! text-center underline before:content-['←']">
+      Mel's Meinungen
+    </h1>
+  </a>
+  <article class="p-0.5 md:p-2">
+    <div class="flex items-end align-bottom">
+      <h2 class="my-0!">
+        {post.data.title}
+      </h2>
+      <span class="ml-auto">
+        {post.data.publishDate}
+      </span>
+    </div>
+    <hr class="my-4!" />
+    <Content />
+    <hr class="mt-4! mb-8!" />
+    <p class="text-base">
+      You have questions or want to share your opinion about this topic?
+      <a href="mailto:herr.kilian.gaertner@gmail.com">Write me an e-mail</a> or send
+      a message over <a href="https://bsky.app/profile/meldanor.bsky.social">
+        BlueSky
+      </a>
+    </p>
+  </article>
+</Layout>

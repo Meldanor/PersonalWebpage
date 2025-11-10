@@ -1,0 +1,26 @@
+---
+interface Props {
+  tags: string[];
+  textSize?: "sm" | "xs";
+}
+
+const { tags, textSize = "sm" } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex",
+    "flex-wrap",
+    "gap-y-2",
+    { "text-xs": textSize === "xs" },
+    { "text-sm": textSize === "sm" },
+  ]}
+>
+  {
+    tags.map((tag) => (
+      <span class="me-2 rounded-full bg-green-100 px-2 py-1 font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
+        {tag}
+      </span>
+    ))
+  }
+</div>

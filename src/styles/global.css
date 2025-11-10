@@ -1,0 +1,9 @@
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-inter: "Inter Variable";
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

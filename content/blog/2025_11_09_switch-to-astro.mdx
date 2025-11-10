@@ -1,0 +1,167 @@
+---
+draft: false
+language: en
+title: "Game reviews and AstroJs"
+publishDate: "2025-11-10"
+summary: "Switching back to AstroJs but with Markdown content"
+seoTags: ["astrojs", "markdown", "website"]
+---
+
+import CenteredImage from "@components/blog/CenteredImage.astro";
+import ImageWithCaption from "@components/blog/ImageWithCaption.astro";
+
+import germanSiteImage from "@assets/images/blog_post/2025_11_09_switch-to-astro/screenshot_website_german.png";
+import englishSiteImage from "@assets/images/blog_post/2025_11_09_switch-to-astro/screenshot_website_english.png";
+import factorioPlaytimeImage from "@assets/images/blog_post/2025_11_09_switch-to-astro/factorio_playtime.png";
+import saltFactoryYoutubeImage from "@assets/images/blog_post/2025_11_09_switch-to-astro/saltFactoryYoutube.png";
+import flowchartWebsiteDevelopment from "@assets/images/blog_post/2025_11_09_switch-to-astro/flowchart_website_development.png";
+
+I've rebuild my website again with [AstroJs 5](https://astro.build). Only a year after [my switch to zola](/blog/2025_01_11_switch-to-zola)! Why? Mostly because I was bored but also I had to do too many hacks for Zola to work in way I wanted
+
+### Table of Contents
+
+## Watching YouTube about old games
+
+> Stay a while and listen
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={saltFactoryYoutubeImage}
+  alt="Screenshot of the youtube page of The Salt Factory. It lists videos from their series 'Was Game X as good As I remember'"
+  caption="The Salt Factory on YouTube"
+/>
+
+I was watching [videos about old games I really liked on YouTube](https://www.youtube.com/@TheSaltFactory). Dragon Age, Witcher 1, Knights of the Old Republic. The videos were great. At the same time I was writing another review on Steam and got the idea:
+
+"Maybe I can write an extended review on my homepage?"
+
+So I've opened my website project and thought about how to integrate it. But then I realized that I didn't like Zola as much as I did when I've implemented it. There was no good editor support for it and I need to upgrade Zola and the nodejs dependencies. Everything felt a bit ... rusty? After I was initially a bit disappointed I was reading the internet and remembered that there is AstroJs for statically generated content. I didn't really understood how it functions and thought that it would be a great opportunity to learn it.
+
+Also: My boredom was at a maximum. Most of my other projects didn't work out or were more on the frustrating side. Bevy is a game engine I desperately wanted to learn but it was hard to learn the new concept of ECS. And to learn Rust. Another side project was the rewrite of a TTRPG focused media player in Rust which was fun but in the end the audio engine (and my understanding of audio processing) was not enough to recreate everything I wanted.
+
+The development for Astro was nearly the same as for Zola. I checked out the repository twice (here with `git worktree`), created a new branch `rewrite/astrojs` and deleted everything. After that I've initialized AstroJs with their `CLI` and started to copy all content and features step by step. It was surprisingly easy to get the main page running and split the big index.html into multiple small components.
+
+At this point I realized that the first version of my blog used AstroJs! I swear I've forgotten it when the rewrite began! It was a bit funny but to be honest - the AstroJs layer was very minimal and I didn't understand anything about it because I just wanted to have a Strapi based blog.
+
+AstroJs can use Markdown (more regarding this a bit later) which is ideal because I could transfer the Markdown for Zola nearly 1:1 to AstroJs. The necessary changes included the `frontmatter` meta information and replacing the custom Zola directives with Astro components.
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={flowchartWebsiteDevelopment}
+  alt="History of my website as a simple flowchart. PostHTML to NUXT2 to Zola To AstroJs"
+  caption="History of my website as a simple flowchart"
+/>
+
+All in all needed the rewrite two weeks and I think I used 32 hours or so to complete it.
+
+## AstroJs - My new star
+
+I really enjoyed working with AstroJs. It is a well designed and documented framework. I had no real issue with it even for medium complex tasks. The main documentation is very well written and stable. The usage of `.astro` components reminded me very of `vue` or `svelte` but simpler. Hint: It is possible to use these frontend frameworks in Astro, but I didn't see the necessity - maybe for one or two cases. The clear distinction between `code`, `html` and `css` is a clear winner for me. Zola was a bit too strict with its layout enforced usage and creating multiple but slightly different sides was a bit complicated. This lead to a more maintainable code because it was split into many more individual components. Also I could reuse code more easy.
+
+After some years of using VisualStudio code I switched to Zed - a Rust based editor which is much faster. After they finally given me the option to completely disable the AI shit I switched to Zed. The Astro support for Zed is fine – and definitely better than the one for Zola. The custom directives in Zola were always a pain in the ass because it was whitespace dependent and ugly to debug. With Astro I could rely on the prettier and autoformat.
+
+The image handling is nice in Astro. You have a `<Image>` component that does all the heavy lifting. Just give it your original image and Astro converts it to an optimized version. Also it can inline SVG which is very important to avoid unnecessary HTTP calls just for a small icon. I solved these issues in Zola with custom directives but they were unstable and ugly.
+
+Zola is not a popular choice - the crux of every project. You need a solid community to be a good framework, otherwise the documentation and support lacks. But you only get a good community if your project is popular. Astro seems to be one of the big giants that achieved critical mass and have a well written, complex documentation for many edge cases. I had to reverse engineer some stuff in Zola to understand it and there was sometimes a gap in the documentation. I don't want to talk shit about Zola - it was good and I liked it at the moment. But I would recommend AstroJs instead of Zola for most of the use cases.
+
+The big advantage of Astro are the typed content collections. You define them at a central point and define a scheme with Zod 3. The magic of AstroJs converts these to usable TypeScript definitions and I had a working autocompletion. Astro even warns me if a new item doesn't fit the scheme! I've typed the code very easily and only encountered one problem with it, but that was fine.
+
+```ts
+// defined in src/content.config.ts
+const blogEntries = defineCollection({
+  loader: glob({ pattern: "**/*.md*", base: "./content/blog" }),
+  schema: z.object({
+    language: z.enum(["de", "en"]),
+    draft: z.boolean().default(false),
+    publishDate: z.string().date(),
+    title: z.string(),
+    summary: z.string(),
+    seoTags: z.array(z.string()).optional(),
+  }),
+});
+
+// used in any Astro component
+const entry: CollectionEntry<"blogEntry"> = await getCollection("blogEntry")[0];
+// with intellisense
+console.log(entry.data.title);
+```
+
+All in all I was happy with Astro - not every star out there is friendly!
+
+## Sling maneuver
+
+I knew that Astro was good for static site generation. But reading the first parts of the documentation made me question: Does it really? There are examples for server side rendering. For nodejs deployments. How to use `fetch()` and write server functions. It took me a while and searching the internet to find out that Astro in fact does static site generation very well! Maybe I misunderstood something, but the first hour or so I was unsure. If I want a fullstack framework I go to SvelteKit, Nuxt or Next.
+
+Zola was fast. Very fast. Instant compilation of the stuff, the dev server was usable in a few milliseconds. I really liked it. Especially for such a small and simple site like mine! Astro isn't slow - but it isn't as fast as Zola. It cannot really be. But Zola suffered from some breaks I had to apply. The tailwind preprocessing slowed it down a bit and complicated the process. In the end Zola was as fast as Astro and I lost the speed advantage of using Zola. AstroJs was fast enough for me in the end to guarantee a smooth iterative development.
+
+Vue with its `<v-if>` directives was really intuitive to read and use – at least for me. I'm not a friend of the JSX stuff
+
+```jsx
+{
+  isThere && <p>Yes</p>;
+}
+```
+
+I'm not a friend of this syntax because is hard to read and understand from a logical point. The return value is ... true? Not the component? I don't know. I could arrange me with it but I wish there was a svelte or vue like syntax instead of this. WITHOUT using Svelte or Vue in Astro. Yes, it is possible. I don't install another big framework just to avoid a minor, personal syntax issue.
+
+Astro can consume and process Markdown really easily and I liked it, especially in combination with the content collections. But the Markdown is limited and the documentation points to using `MDX`. Now you can use Astro components and JavaScript/TypeScript. I made the switch for some cases (centered images for example) to fix limitations of the simple Markdown. A few hours I've discovered that there is also Markdoc, another very similar standard that seems to have a better support in Astro. Why there are two nearly identical standards supported? I think Astro should prefer one and deprecate the other. In the end it was only a very minor issue.
+
+There is fundamental i18n support in Astro. After reading about it, I planed to i18n my website in German and English. Okay, after a while I removed the i18n support for my blog and reviews because I don't want to write the long texts twice. Maybe I will pay some translator a few bucks to do this – and no, I don't want to use an AI that smoked weed and tries to translate my texts. This website is written by a human. After converting the whole site with i18n I realized that the support is very basic and you have to write additional functions to get the correct path to your pages or translate strings in components. In the end there is no real i18n support, just a very basic routing stuff. There are additional plugins but I could only find old ones or very trivial ones. I wish Astro would have a better i18n support implemented.
+
+## Moin / Hello
+
+The big new change on my website was already mentioned in my previous paragraph: **i18n** support! The main page, my project list and career is now available in English and German.
+
+<div class="flex flex-wrap justify-around">
+    <ImageWithCaption
+      width="450"
+      height="450"
+      src={germanSiteImage}
+      alt="A screenshot of the old website"
+      caption="A screenshot of website in German"
+    />
+
+    <ImageWithCaption
+      width="450"
+      height="450"
+      src={englishSiteImage}
+      alt="A screenshot of the old website"
+      caption="A screenshot of website in English"
+    />
+
+</div>
+
+I have to fix the RSS and Atom feeds a bit but I think the current implementation is good enough for a first release. The i18n was a nice exercise because I didn't do something like that in my career until this point. There was no need. Is there a need for my website? I don't know. Maybe it is know.
+
+## Why Factorio is the best game
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={factorioPlaytimeImage}
+  alt="Screenshot of the Factorio page in Steam with a playtime of around 1300 hours."
+  caption="I just started Factorio"
+/>
+
+This opinion is true and doesn't need any detailed explanation. But there are other games out there I wanted to talk about – as seen in my motivation. So there is now a new type of blog post for game reviews. You can find them in [my list of blog posts](/blog) with the tag. After writing about two games I learned two things:
+
+1. It is fun to write about a game and I learn a bit. How to take notes, how to create an outline of a text.
+2. I experience the games in a different way. **Vampire The Masquerade Bloodlines** had a few hundred lines of notes and they mirrored my thoughts and expectation at this point of time. It was interesting to reread your notes in a later point and even connect two dots.
+
+It was also very important for me to give the read – You – the context of my review. I wanted to post my PC configuration, how long the playthrough took, what settings I've used and if I used a controller or keyboard. When a modern game runs nice it is important to know that operating system, what GPU and CPU they used and what settings they have chosen. Especially in this year of Linux it is nice to know if you have problems with the game what GPU and Kernel you are using. So every review contains a header of raw information. Maybe it will be interesting to see how the configuration changes over time.
+
+While writing the Vampire article I realized that screenshots could be very nice to break out the block of texts. I forgot to take them and Vampire and Jedi Fallen Order are two games that struggle with Cloud saves. So after realizing I needed to save games I couldn't create them without replaying the games. So sorry, the first review are text only.
+
+## Lagrange point L3
+
+What are my next steps? I'm currently playing (and really enjoying ) **Clair Obscur: Expedition 33** and will write a review about it. But I've just started the game, so it may take a week or so until I've finished it.
+
+Also there are three topics I want to create a more technical post about that isn't about "I've rewritten my website in X" like this one. I teased it in my old blog with the GameDev blog post: my experience with Bevy and Rust. I think it is interesting and helpful for me to organize my thoughts.
+
+Another topic that is close to my heart is how I handle my media library for movies and shows/series (looking at you color and colour). In 2025 it is more important than ever to take back the ownership of your data and how I do it will be the topic of this post.
+
+The third one will be a review about my Linux only experience. I removed Windows from my machine a year ago (and never looked back) and want to tell you about my experience and why you should give it a try.
+
+So that is from me. Thank you.

@@ -1,0 +1,46 @@
+---
+import NewPostEntry from "./NewPostEntry.astro";
+import { filterNonDraft } from "../../contentCollections/utils";
+import { getCollection } from "astro:content";
+import { useTranslations } from "../../i18n/utils";
+
+const latestBlog = (await getCollection("blogEntries"))
+  .filter(filterNonDraft)
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime(),
+  )[0];
+
+const latestGameReview = (await getCollection("gameReviews"))
+  .filter(filterNonDraft)
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime(),
+  )[0];
+
+const latestEntries = [
+  { path: `/gameReview/${latestGameReview.id}`, inner: latestGameReview },
+  { path: `/blog/${latestBlog.id}`, inner: latestBlog },
+].sort(
+  (a, b) =>
+    new Date(b.inner.data.publishDate).getTime() -
+    new Date(a.inner.data.publishDate).getTime(),
+);
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<h2>
+  <a href={"/blog"}>{t("main.newestBlogEntry.myBlog")} ↗</a>
+</h2>
+<p>{t("main.newestBlogEntry.about")}</p>
+<h3>{t("main.newestBlogEntry.newest")}</h3>
+<div class="grid grid-cols-[1fr_2fr]">
+  {
+    latestEntries.map((entry) => (
+      <NewPostEntry post={entry.inner} path={entry.path} />
+    ))
+  }
+</div>

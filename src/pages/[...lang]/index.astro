@@ -1,0 +1,42 @@
+---
+import { getEntry, render } from "astro:content";
+
+import ExampleProjectList from "@components/main/ExampleProjectList.astro";
+
+import type { GetStaticPaths } from "astro";
+
+import Layout from "@layouts/Layout.astro";
+import MyCard from "@components/main/MyCard.astro";
+import MyCareer from "@components/main/MyCareer.astro";
+import NewPosts from "@components/main/NewPosts.astro";
+
+export const getStaticPaths = (() => {
+  return [
+    {
+      params: { lang: undefined, locale: "de" },
+    },
+    {
+      params: { lang: "en", locale: "en" },
+    },
+  ];
+}) satisfies GetStaticPaths;
+
+const aboutMeText = await getEntry("texts", `${Astro.currentLocale}/aboutme`)!;
+const { Content: AboutMeContent } = await render(aboutMeText);
+---
+
+<Layout>
+  <main class="flex-1 p-4">
+    <div class="lg:flex lg:justify-between lg:gap-4">
+      <MyCard />
+      <div class="lg:w-3/5">
+        <div class="[&>p:first-child]:mt-0">
+          <AboutMeContent />
+          <NewPosts />
+          <MyCareer />
+          <ExampleProjectList />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
