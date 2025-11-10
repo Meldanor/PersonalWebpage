@@ -1,0 +1,17 @@
+---
+import { Image, type LocalImageProps } from "astro:assets";
+
+type CenteredImageProps = { caption: string };
+
+type Props = LocalImageProps & CenteredImageProps;
+
+const { src, alt, caption, ...attrs } = Astro.props;
+---
+
+<div class="not-prose flex justify-center">
+  <!-- @ts-expect-error: Src has a src attribute -->
+  <a href={src.src} target="_blank">
+    <Image src={src} alt={alt} {...attrs} />
+  </a>
+</div>
+<p class="my-0! text-center text-sm">{caption}</p>

@@ -1,0 +1,37 @@
+---
+import "../styles/global.css";
+import Footer from "@components/Footer.astro";
+import LanguageSwitch from "@components/LanguageSwitch.astro";
+import OpenGraph from "@components/OpenGraph.astro";
+import ThemeIcon from "@components/ThemeIcon.astro";
+---
+
+<html lang={Astro.currentLocale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>Kilian Gärtner</title>
+    <OpenGraph
+      title="Kilian Gärtner"
+      description="Personal website of Kilian Gärtner - a software architect and gamer with humor"
+      ogType="website"
+    />
+  </head>
+  <body
+    class="font-inter prose prose-stone dark:prose-invert mx-auto grid min-h-screen max-w-(--breakpoint-xl) bg-white py-4 dark:bg-gray-900"
+    style="grid-template-rows: auto 1fr auto"
+  >
+    <header class="flex flex-row-reverse gap-6 px-4">
+      <ThemeIcon />
+      <LanguageSwitch />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

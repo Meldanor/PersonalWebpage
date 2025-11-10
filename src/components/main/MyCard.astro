@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import Socials from "./Socials.astro";
+import avatarImage from "@assets/avatar_2022.png";
+import { useTranslations } from "../../i18n/utils";
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<div class="mb-8 h-full lg:sticky lg:top-20 lg:mb-0 lg:w-2/5">
+  <h1 class="mb-2! text-5xl font-semibold tracking-widest">Kilian Gärtner</h1>
+  <h2 class="mt-0! font-light tracking-tight">
+    Senior Software Engineer <br />M.Sc. Computer Science
+  </h2>
+  <p>
+    {t("main.mycard.shortIntro")}
+  </p>
+  <Image
+    class="my-0! rounded-full drop-shadow-md"
+    src={avatarImage}
+    height="100"
+    width="100"
+    alt="avatar image of meldanor. A round head with big friendly eyes and a red mouth"
+  />
+  <Socials />
+</div>

@@ -1,0 +1,29 @@
+---
+export interface ListEntry {
+  title: string;
+  value: string;
+}
+
+interface Props {
+  header: string;
+  listEntries: ListEntry[];
+}
+
+const { listEntries, header } = Astro.props;
+---
+
+<div
+  class="border-double border-slate-400 p-2 lg:border-y-6 dark:border-purple-900"
+>
+  <h4 class="my-0! mb-4! text-xl font-semibold">{header}</h4>
+  <dl class="my-0! divide-y divide-slate-400 dark:divide-purple-800">
+    {
+      listEntries.map((entry) => (
+        <div class="mt-0! mb-2! text-sm sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="my-0! text-left font-bold">{entry.title}</dt>
+          <dd class="my-0! sm:col-span-2">{entry.value}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</div>

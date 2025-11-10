@@ -1,0 +1,18 @@
+---
+let otherLanguage: string;
+let otherPath: string;
+if (Astro.currentLocale === "de" || Astro.currentLocale === undefined) {
+  otherLanguage = "🇬🇧";
+  otherPath = `/en${Astro.url.pathname}`;
+} else if (Astro.currentLocale === "en") {
+  otherLanguage = "🇩🇪";
+  otherPath = `${Astro.url.pathname.replace("/en", "")}`;
+} else {
+  throw "Unhandled arm in if-else for otherLanguage";
+}
+---
+
+<a
+  class="<text-center></text-center> rounded-lg text-3xl no-underline hover:bg-gray-100 dark:hover:bg-gray-700"
+  href={otherPath}>{otherLanguage} ↗</a
+>

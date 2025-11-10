@@ -1,14 +1,35 @@
 {
   "name": "personal_website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.16",
-    "tailwindcss": "^4.0.0"
+    "@astrojs/mdx": "^4.3.9",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/ts-plugin": "^1.10.5",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@minify-html/node": "^0.18.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.3",
+    "astro-compressor": "^1.2.0",
+    "feed": "^5.1.0",
+    "remark-toc": "^9.0.0",
+    "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.0"
-  },
-  "scripts": {
-    "serve": "tailwindcss -i src-styles/base.css -o static/styles/main.css && zola serve & tailwindcss -i src-styles/base.css -o static/styles/main.css --watch",
-    "build": "tailwindcss -i src-styles/base.css -o static/styles/main.css --minify && zola build"
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "eslint-plugin-astro": "^1.4.0",
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "typescript-eslint": "^8.46.2"
   }
 }

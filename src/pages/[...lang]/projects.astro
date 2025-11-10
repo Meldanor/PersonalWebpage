@@ -1,0 +1,52 @@
+---
+import {
+  useFilterCollection,
+  useTranslatedPath,
+  useTranslations,
+} from "../../i18n/utils";
+import type { GetStaticPaths } from "astro";
+import Layout from "@layouts/Layout.astro";
+import ProjectCard from "@components/projects/ProjectCard.astro";
+import ProjectTable from "@components/projects/ProjectTable.astro";
+
+import { getCollection } from "astro:content";
+
+const t = useTranslations(Astro.currentLocale);
+const translatedPath = useTranslatedPath(Astro.currentLocale);
+
+const projects = (await getCollection("projects"))
+  .filter(useFilterCollection(Astro.currentLocale))
+  .sort((a, b) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
+
+export const getStaticPaths = (() => {
+  return [
+    {
+      params: { lang: undefined, locale: "de" },
+    },
+    {
+      params: { lang: "en", locale: "en" },
+    },
+  ];
+}) satisfies GetStaticPaths;
+---
+
+<Layout>
+  <main class="flex-1 p-4">
+    <a class="inline-flex items-center gap-2" href={translatedPath("/")}>
+      <span> &lt;- Kilian Gärtner</span>
+    </a>
+    <h1>{t("projects.index.myProjects")}</h1>
+    <p>
+      {t("projects.index.description")}
+    </p>
+
+    <!-- Display table only on large displays -->
+    <ProjectTable projects={projects} />
+    <!-- Show list of project tables only on smaller devices -->
+    <div class="flex flex-col gap-8 lg:hidden">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </main>
+</Layout>

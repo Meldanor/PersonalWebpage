@@ -1,0 +1,31 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+
+import TagList from "@components/TagList.astro";
+import { useTranslations } from "../../i18n/utils";
+
+interface Props {
+  job: CollectionEntry<"careerEntries">;
+}
+
+const { job } = Astro.props;
+const { Content } = await render(job);
+
+const t = useTranslations(Astro.currentLocale);
+
+const jobEndYear =
+  job.data.endYear === "Present"
+    ? t("main.myCareerEntry.present")
+    : job.data.endYear;
+---
+
+<div class="grid grid-cols-[1fr_2fr]">
+  <div class="content-center text-sm">
+    {job.data.startYear} - {jobEndYear}
+  </div>
+  <h3 class="my-0!">{job.data.position} - {job.data.company}</h3>
+  <div class="col-start-2">
+    <Content />
+    <TagList tags={job.data.technologies} />
+  </div>
+</div>

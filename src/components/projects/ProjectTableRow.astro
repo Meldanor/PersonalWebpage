@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from "astro:content";
+import TagList from "@components/TagList.astro";
+
+import { render } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<tr>
+  <td class="font-bold">
+    {project.data.title}
+  </td>
+  <td class="py-2 [&>p]:my-0">
+    <Content />
+  </td>
+  <td>
+    <TagList tags={project.data.technologies} textSize="xs" />
+  </td>
+  <td>
+    {
+      project.data.repositoryUrl ? (
+        <a
+          class="text-lg no-underline"
+          href={project.data.repositoryUrl}
+          title={`${project.data.title} repository`}
+          aria-label={`${project.data.title} repository (opens in a new tab)`}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          ↗
+        </a>
+      ) : (
+        "-"
+      )
+    }
+  </td>
+  <td>
+    {
+      project.data.projectUrl ? (
+        <a
+          class="text-lg no-underline"
+          href={project.data.projectUrl}
+          title={`${project.data.title} project`}
+          aria-label={`${project.data.title} project (opens in a new tab)`}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          ↗
+        </a>
+      ) : (
+        "-"
+      )
+    }
+  </td>
+</tr>

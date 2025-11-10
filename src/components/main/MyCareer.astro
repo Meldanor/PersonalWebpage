@@ -1,0 +1,22 @@
+---
+import { useFilterCollection, useTranslations } from "../../i18n/utils";
+import MyCareerEntry from "./MyCareerEntry.astro";
+import { getCollection } from "astro:content";
+
+const careerEntries = (await getCollection("careerEntries"))
+  .filter(useFilterCollection(Astro.currentLocale))
+  .sort((a, b) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
+const t = useTranslations(Astro.currentLocale);
+---
+
+<h2>
+  {t("main.myCareer.career")} / <a
+    href="/documents/2025_Lebenslauf_Kilian_Gaertner.pdf"
+    >{t("main.myCareer.cv")} ↗</a
+  >
+</h2>
+<div class="flex flex-col gap-6">
+  {careerEntries.map((job) => <MyCareerEntry job={job} />)}
+</div>
