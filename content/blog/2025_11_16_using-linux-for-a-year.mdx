@@ -1,0 +1,185 @@
+---
+draft: false
+language: en
+title: "Switch to Linux - A review after a year"
+publishDate: "2025-11-23"
+summary: "Why switching to Linux was one of my best ideas for years"
+seoTags:
+  [
+    "linux",
+    "arch",
+    "windows",
+    "freedom",
+    "open source",
+    "gaming",
+    "steam",
+    "proton",
+  ]
+---
+
+import CenteredImage from "@components/blog/CenteredImage.astro";
+import ImageWithCaption from "@components/blog/ImageWithCaption.astro";
+
+import screenshotLinuxDesktop from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/screenshotLinuxDesktop.png";
+import declineWindowsChart from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/declineWindowsChart.png";
+import fastfetch from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/fastfetch.png";
+import screenshotDolphin from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/screenshotDolphin.png";
+import screenshotHeroic from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/screenshotHeroic.png";
+import screenshotSteam from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/screenshotSteam.png";
+import gitHubIssueAlters from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/gitHubIssueAlters.png";
+import praiseLinux from "@assets/images/blog_post/2025_11_16_using-linux-for-a-year/praiseLinux.png";
+
+This post is about my very positive experience using Linux for development, gaming, and general computer stuff after a year and more reasons why you should abandon the spyware Windows. Strap in because this is a long one. Longer than I wanted. But there are some graphics in between to rest your eyes.
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={screenshotLinuxDesktop}
+  alt="Screenshot of my Linux desktop with many icons on top, a text editor in the front and a small task bar at the bottom."
+  caption="A screenshot of my Linux desktop - looking modern"
+/>
+
+### Table of Contents
+
+## 1-1-1970
+
+> I'm using Arch, by the way
+
+Before I talk about my positive experience I want to say something about my background with operating systems. This gave me an advantage for the switch but should not stop you from at least thinking about it! In my 20+ years of using computers I've used nearly all major operation systems except Android. My first memories with a computer goes back to Windows 95 or 98 and Windows was my main operating system. I've destroyed it by deleting the `System32` folder (I really though it was a virus!), I've installed it myself and for other people and over the years I used it until the very end of Windows 10. It worked fine and I could control it and gaming - which is a primary focus - was only really viable on Windows.
+
+macOS / OS X was something exotic to me because I had no real Apple devices until the iPhone 4 and the only in very few instances I had to interact with a Mac. This changed with my first job. It took some time to getting used to it and it is my daily driver when I work because the company gives them. I like the OS because "it just works", but over the time it was like a car that just drives. A knife that just cuts. It does it job and I have a neutral feeling about. I always disliked the suboptimal Docker support and some special use cases while developing, but nothing major.
+
+My father played around with Linux and I'm sure I've seen a Linux Mint or so in the past, but my real first experience was a Raspberry PI in 2011 or so. The Raspberry OS based on Debian was my playground to learn about Linux because it seemed necessary as a computer scientist student to also learn about Linux. But the Linux was running headless and only for a small amount of time I've installed Ubuntu on my laptop for University. In the later years I've owned multiple server systems like a NAS with Unraid or a VPS on Hetzner - all running Linux systems without a desktop. Linux was always a Server first system for me to host services but it was never a Developer first or Gaming first system.
+
+This changed when Windows got rotten more and more and turned from an operating system to a modern spyware and AI bubble software.
+
+## Linux and Distribution
+
+> Linux is the heart and brain, a Distribution is the whole body. Some have more arms than others.
+
+I think there is still confusion about what Linux is and why you have to chose a distribution instead of Linux 10. I was confused by this many years but the reality is very simple. One of the reasons for this confusion is the vast amount of different distributions without a dominant one.
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={fastfetch}
+  alt="Screenshot of my the output of the programm FastFetch. It displays many information about my system like CPU, RAM and what kernel I use. You can find these information on my gaming blog posts."
+  caption="Fastfetch output about my distro and pc"
+/>
+
+Linux itself is a very primitive and low level software that helps applications like Firefox or games to communicate with the hardware. Because hardware is complex and there are many, many variants of hardware Linux is complex and big. You can download the latest version of Linux and start it - but you can't do really anything with it. Linux doesn't have a browser, a music player or even a file browser. It just interacts with your CPU, hard drive and mouse.
+
+A distribution like Ubuntu, Arch, or one of the many out there takes Linux and adds a few thousand little software to give you a useful product. It also regulates what software is easily available for the end user and ensures the many application from the whole world are more or less compatible with each other. You don't need a distribution to get a Linux based operating system - but it makes it much easier. There are different types of distributions and this is more a tribal war than an easy way. The maintainer of the distribution are biased and select software in specific version because they believe this version is the best. And there are thousand of different small programs in a distribution.
+
+So if you want to start using Linux here some simple steps:
+
+0. Think about what you want to do with your computer and check if you have very special programs (custom written software mostly) that have no alternatives or cannot run on Linux. This is a very rare case, but if you one of these it can be a deal breaker. Yes, you can run a VM on Linux, but you are not my target audience with these steps. Adobe and Microsoft Office do not run on Linux out of the box and need additional steps or switch to alternatives.
+1. Watch some tutorials on the internet about it. [ExplainingComputers](https://www.youtube.com/watch?v=n8vmXvoVjZw) have excellent tutorials.
+2. Download a Linux distro. I recommend using one of these
+   - [Bazzite](https://bazzite.gg/) - Gaming oriented, based on Fedora, a stable, and popular distro.
+   - [Majaro](https://manjaro.org/) - Gaming oriented, based on Arch as described in this post.
+   - [Ubuntu](https://ubuntu.com/desktop) - General purpose distro, maybe to most popular Linux distro out there. Has to be tuned for gaming.
+3. Install one of these distro on a separate disk like I did or install it on an USB drive at first. Keep your Windows for the moment intact because of data you want to transfer or you don't want to use Linux – sad, but possible. I kept my Windows for about 3-4 month before I wiped it.
+4. The [ArchWiki](https://wiki.archlinux.org/) and [UbuntuUsersWiki](https://wiki.ubuntuusers.de/Startseite/) have excellent articles for troubleshooting.
+5. Have fun.
+
+## The decline of Windows
+
+> Hey, I'm Clippy/Cortana/WhatEver
+
+Windows 7 was very nice and I also liked Windows 8.1. The windows 10 was peak for me and I switched to only a few month after release. The previous Windows installations always felt a bit unstable over time and needed a reinstall - I never reinstalled Windows 10. I liked the new updates and could go on for ever with it. To be honest: The privacy problems in Windows with collecting data was not really an issue for me. I disabled some services but used some example for the Weather app for my location. In my opinion a little bit of usage telemetry helps the developer to find out what their users do and want. So at best I was neutral in that aspect.
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={declineWindowsChart}
+  alt="Fake linechart that shows my opinion that Quality in Windows drops with the amount the Ads and AI in Windows increases. The data is fake"
+  caption="Quality vs Ads&AI in Windows - professionnally made"
+/>
+
+Than Windows 11 was announced and the changes were ... minimal? I never switched to it because I never saw a real advantage. I think they enforced the switch just to have a new version but they didn't have a real reason for the switch. The marketing instead of the engineers won. The advertisements got more and more aggressive to switch, full screen non shippable ads were on my screen after a restart. For a product I've paid. Every update was a new hunt to remove the newly installed bloat.
+
+And than generative AI happened. Every big, commercial software now forcefully integrate AI to be generate interest for investors. And this type of not very useful but invasive AI took hold into the very foundation of an operation system. Microsofts big push with it was Recall - a system that knows about everything you do on this computer and feeds it into a model. It takes screenshots every few seconds to not miss anything. This includes passwords, credit card or the love letter you never send. Baked into a model that does not forget. So you do not forget. And everyone else that breaks into your system and extract these information. Microsoft said they trained it to be secure - but the only secure system is to not have it. And the benefit is very minimal and does not justify the effort and security risks. Even after massive public backlash they would not course correct because Microsoft was now big into AI.
+
+So I was sitting there in late November of 2024 reading the news about a new Windows update that broke certain systems because Microsoft has to buy OpenAI stuff instead of paying test engineers. Reading about the newly ads Microsoft want to integrate. Or the Recall update that was canned after public outcry but now should be released to the wild. I knew I had only a year or so to switch to Windows 11 because Windows 10 was becoming End of Life at November 2025. No security patches in these days are very dangerous, so running Windows without it would be like running around a wet market and sniffing at bats in 2020.
+
+Over the years I followed different influencers in the tech bubble talking about Linux and how gaming is. [This video by Bog](https://www.youtube.com/watch?v=urYjGtnfckM) caught my attention and I was fascinated. I mostly only installed Ubuntu systems on VMs and knew that Arch was a hard to install distribution. But these video showed me that even a tech newbie can install Arch and have a beautiful customizable and working Desktop system. Maybe I should give it a try?
+
+## I love Arch
+
+> yay
+
+So I gave it a try and installed Arch from scratch following [this installation guide](https://gist.github.com/mjkstra/96ce7a5689d753e7a6bdd92cdc169bae#hostname-and-host-configuration). Arch itself provides only a very, very basic system without a Desktop (yes, you have to install the Desktop separately) nor any other stuff. You have to do nearly everything yourself on the console at the beginning. Create a filesystem, configure the network and than install basic software like file manager, desktop, audio, editor, browser, etc. The advantage is that Arch is a bleeding edge distribution that always has the newest version of software. Ubuntu is more stable but its software can be very outdated and be useful for modern day usage. And Arch has nearly every open source software while in other distributions you get problems because there is no installation for it.
+
+I wouldn't recommend any new Linux user to try out Arch. It is very powerful but so are nuclear power plants. You have to know what you do. I would recommend new users an Arch based distribution that automates the installation and maintenance part. CachyOs is one of them. SteamOs – the OS of the Steam Deck – is based on Arch. I love Arch because I made it my own, but it took a while. The root directory of my new filesystem was birthed on `2024-11-29 12:13:47.563708444 +0100`. But to be honest: The filesystem I started with is even a few days younger because after some trial and errors I started new. It was hard for me to understand the filesystem BRTFS and its snapshot system and the guides only differs a bit depending on if you encrypt your drive and what boot loader you use. In the end I made it a bit more complicated for me than it was necessary.
+
+After I had a running desktop I could install the basic software very easily. Steam was up and running in a few minutes and I could even run some games on it. Proton, based on Wine, provides the translation layer for games and applications that are Windows only to work on Linux. And it works very well. Proton itself is more a bundle of Wine with different other translation tricks and patches. Steam itself provides an easy to use software to handle it. GOG games were a bit more difficult than I imagined because the official GOG client does not support Linux. HeroicGamesLauncher was an alternative and I use it today.
+
+<div class="flex flex-wrap justify-around">
+    <ImageWithCaption
+      width="450"
+      height="400"
+      src={screenshotSteam}
+      alt="Screensot of steam library in Linux. EldenRing is in the focus."
+      caption="My steam library under Linux - same as in Windows"
+    />
+
+    <ImageWithCaption
+      width="450"
+      height="400"
+      src={screenshotHeroic}
+      alt="Screenshot of the HeroicGamesLauncher with some games like DeusEx in the middle"
+      caption="HeroicGamesLauncher for GOG"
+    />
+
+</div>
+
+I decided to use KDE with Wayland as my "graphical" view of Arch. There is a big war in Linux land between KDE and Gnome and between Wayland and X11. KDE and Wayland are the newest but not so stable versions but surprisingly I didn't encountered any problems of it. Use Wayland, but look at Gnome and KDE and chose what you like visually. Functional they are different but only in detail. KDE is very, very customizable and I spent a few hours to customize my desktop and the colors of it. These customization were not possible in Windows even with special programs.
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={screenshotDolphin}
+  alt="Screenshot of the filemanager Dolphin in KDE. On the left are the different places like Downloads, Projects and the SAMBA drives. In the middle ware folders of projects and on the right are Details. There is a purple tint because of the theme."
+  caption="Dolphin the filemanager in KDE. Much better than Windows FileExplorer"
+/>
+
+In the first few weeks I only switched to Windows to transfer some data but not for gaming, working or light browsing. Everything I did I could do in Linux. The file manager Dolphin is much better than the Windows FileExplorer and I love it. It has some problems with SAMBA network drives I wish it wouldn't but otherwise it is perfect. I hated the Windows FileExplorer so much but there was no real replacement because it is such a basic program in Windows it is hard to replace.
+
+And the best. No ads. No AI (except in Firefox - I hope that Servo will replace Firefox in the near future). No unnecessary programs. I can uninstall everything I want and use only the programs I need. The updates via `yay` (or `pacman -Syu`) are much faster than in Windows and mostly take a minute with rare restarts. I can use flatpaks that are packages programs that are easy to install and do not influence the system. You cannot break your system because program X installed a library Y that program Z needs in specific version.
+
+## The problems
+
+> Processing Vulkan shaders ... 99%
+
+You waited for it. A software that has only positives? In a blog written by a cynic software engineer? You knew that there was a section about problems. And here is it. Warning: There are no deal breakers and the switch to Linux was an excellent decision.
+
+One of the first problems I've encountered was the lack of "gaming hardware" support. My mouse `Roccat Kone XP Air Wireless` has a bit of a problem in Linux. Sometimes I can't hold left click and drag the mouse at the same speed as without left click. The scrolling speed is wrong - instead of scrolling faster programs interpret it as "scrolling multiple times" like instead of switching one item I switch 3 or 4. The Xbox Controller could not work with Bluetooth but it worked fine with Bluetooth under Windows. The internet is full with it and even the latest firmware update didn't help. I switched to the way better `8BitDo Ultimate 2 Wireless`. I cannot configure everything but many parts are working fine.
+
+The audio was also a small problem. The drivers for my onboard sound card must be different because I sounded a bit off in Discord and the overall audio quality was different. Not better or worse but different enough to notice. I fixed this when I switched to an external sound card the Rode Caster Duo (because I wanted to upgrade my sound system a bit regardless of Linux).
+
+Gaming itself is working fine on Linux but there are problems I hope will be solved in the next years with the Steam Machine and the success of Steam Deck. Games with AntiCheat Kernel solutions do not work on Linux at all. There are some dubious fixes out there but you should not use them. You cannot play these games on Linux. If you want to play a popular multiplayer game take a look on [this list](https://www.gamingonlinux.com/anticheat/) if your game is supported. **Battlefield 6** was a game I wanted to try and play but couldn't because EA is stingy. Also there are games that need tweaks to run. I've used [this database](https://www.protondb.com/) for tweaks and got nearly all games running without issues. But **The Alters** and **The Last of Us Part 1** didn't work and I wanted to play them. I hope new driver, Proton fixes and awareness will change this in the feature. These were 3 games out of nearly 100 I've played and these were the only full stoppers. Most of them ran without a problem.
+
+<CenteredImage
+  width="800"
+  height="400"
+  src={gitHubIssueAlters}
+  alt="Screenshot of a GitHub issue about problems with The Alters and that is don't run on Nvidia with Proton"
+  caption="https://github.com/ValveSoftware/Proton also contains solutions or problems with games"
+/>
+
+I cannot say anything about performance issues because I'm to lazy to benchmark my system under Windows and Linux just to give you an opinion. There are reports that some games are faster in Linux because of Proton optimization but there are also reports about performance losses of 20% for NVIDIA based systems like mine. My PC is beefy and can run my games on max in 1440p in 120fps so take this with a grain of salt. Steam gives you the option to precompile the shaders to reduce performance issues while playing. This is a good option, but I never benchmarked it with or without it. I can only say depending on the game this takes a few seconds to half an hour. And you have to recompile it after each update on your system or the game. Helldivers 2 got a new update? PreCompile the cache for 5-10 minutes just to be ready for the evening. Arch released a new Linux kernel version or NVIDIA driver version? PreCompile. While it is optional it is highly recommended and I didn't have a problem with it. But I wish it would not be necessary at all. Especially in summer when all cores of my CPU are running at 100% for a while.
+
+## Replace the window and let the sun shine
+
+<CenteredImage
+  width="500"
+  height="500"
+  src={praiseLinux}
+  alt="Meme of Dark Souls Character Solair doing the Praise the Sun emote with a Linux penguin in the top right"
+  caption="Praise Linux"
+/>
+
+Despite my issues from the previous sections these were very minor inconveniences and no deal breakers for me. I was very happy about my decision and didn't touch a Windows system for a year. I will try to force my friends to switch to Linux and help them as good as I can for the switch. I know it takes some effort for change but this change is necessary and good. The more people are using Linux the better the support will be. And hopefully some companies will pay the Linux developers to fix problems instead of relying on free unpaid labor.
+
+At the moment I'm using Mac on my Laptop for work and I can use them for light private usage. If I need to buy my own laptop it will be Linux based. There are good companies out there with Linux oriented Laptops ready to use.
