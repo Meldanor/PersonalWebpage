@@ -5,6 +5,7 @@ import MetaInfo, {
 import type { CollectionEntry } from "astro:content";
 import Layout from "@layouts/BlogLayout.astro";
 
+import { email } from "@src/globals";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import { useTranslations } from "../../i18n/utils";
@@ -88,8 +89,9 @@ const { Content } = await render(post);
     <hr class="mt-4! mb-8!" />
     <p class="text-base">
       You have questions or want to share your opinion about this topic?
-      <a href="mailto:herr.kilian.gaertner@gmail.com">Write me an e-mail</a> or send
-      a message over <a href="https://bsky.app/profile/meldanor.bsky.social">
+      <a href=`mailto:${email}`>Write me an e-mail</a> or send a message over <a
+        href="https://bsky.app/profile/meldanor.bsky.social"
+      >
         BlueSky
       </a>
     </p>

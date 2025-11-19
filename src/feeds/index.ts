@@ -7,6 +7,7 @@ import { createUrl, mdxToHtml } from "./shared";
 import type { APIContext } from "astro";
 import { Feed } from "feed";
 import type { FeedOptions } from "feed";
+import { email } from "@src/globals";
 import { filterNonDraft } from "../contentCollections/utils";
 import { getCollection } from "astro:content";
 
@@ -37,7 +38,7 @@ function createFeedInstance(site: string): Feed {
     },
     author: {
       name: "Kilian Gärtner",
-      email: "herr.kilian.gaertner@gmail.com",
+      email: email,
     },
   };
 

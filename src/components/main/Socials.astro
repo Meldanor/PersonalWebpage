@@ -2,6 +2,8 @@
 import BlueSkyLogo from "@assets/logos/socials/Bluesky_Logo.svg";
 import GitHubLogo from "@assets/logos/socials/github-mark-white.svg";
 import MailLogo from "@assets/logos/socials/mail_logo-black.svg";
+
+import { email } from "@src/globals";
 ---
 
 <div class="mt-4 flex gap-4">
@@ -27,7 +29,7 @@ import MailLogo from "@assets/logos/socials/mail_logo-black.svg";
   </a>
   <a
     class="block hover:text-gray-600 dark:text-gray-200 dark:hover:text-white"
-    href="mailto:herr.kilian.gaertner@gmail.com"
+    href={`mailto:${email}`}
     title="E-Mail me"
     aria-label="E-Mail"
     target="_blank"
