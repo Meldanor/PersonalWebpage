@@ -30,10 +30,13 @@ const { post } = Astro.props;
 const { data } = post;
 
 const gameInfoEntries = [
-  { title: "Game Release", value: data.gameReleaseDate },
+  {
+    title: "Game Release",
+    value: data.gameReleaseDate.toLocaleDateString("sv"),
+  },
   {
     title: "Gamplay Span",
-    value: `${data.startedOn} ${t("gameReviews.gameMetaInfo.gameSpan")} ${data.finishedOn}`,
+    value: `${data.startedOn.toLocaleDateString("sv")} ${t("gameReviews.gameMetaInfo.gameSpan")} ${data.finishedOn.toLocaleDateString("sv")}`,
   },
   { title: "Finished in hours", value: data.playthroughHours.toString() },
   { title: "Graphical Settings", value: data.settings },

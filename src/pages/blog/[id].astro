@@ -40,7 +40,7 @@ const { Content } = await render(post);
         {post.data.title}
       </h2>
       <span class="ml-auto">
-        {post.data.publishDate}
+        {post.data.publishDate.toLocaleDateString("sv")}
       </span>
     </div>
     <hr class="my-4!" />

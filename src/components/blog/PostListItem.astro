@@ -24,7 +24,9 @@ if (entry.collection === "gameReviews") {
   <a href={`/${postPath}/${entry.id}`}>
     <div class="flex items-end align-bottom">
       <h2 class="my-0!">{getLanguageEmoji(entry)} {entry.data.title}</h2>
-      <span class="ml-auto">{entry.data.publishDate}</span>
+      <span class="ml-auto"
+        >{entry.data.publishDate.toLocaleDateString("sv")}</span
+      >
     </div>
   </a>
   <span

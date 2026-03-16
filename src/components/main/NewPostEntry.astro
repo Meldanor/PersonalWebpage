@@ -11,7 +11,7 @@ const { path, post } = Astro.props;
 ---
 
 <div class="content-center text-sm">
-  {post.data.publishDate}
+  {post.data.publishDate.toLocaleDateString("sv")}
 </div>
 <h3 class="my-0!">
   <a href={path}>{getLanguageEmoji(post)} {post.data.title}</a>
