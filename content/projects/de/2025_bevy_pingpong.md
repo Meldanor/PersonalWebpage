@@ -1,5 +1,5 @@
 ---
-date: "2025-01-07"
+date: 2025-01-07
 title: "Bevy Ping Pong"
 
 image: "/src/assets/images/projects/2025_bevy_pingpong.png"

@@ -1,5 +1,5 @@
 ---
-date: "2023-12-01"
+date: 2023-12-01
 title: "WeNeedToPhase"
 
 image: "/src/assets/images/projects/godot-projects/WeNeedToPhase.png"

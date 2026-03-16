@@ -1,5 +1,5 @@
 ---
-date: "2023-11-23"
+date: 2023-11-23
 title: "D&D and Pathfinder2E tools"
 
 image: "/src/assets/images/projects/2023_tabletop_tooling.png"

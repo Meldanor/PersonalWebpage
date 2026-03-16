@@ -2,7 +2,7 @@
 draft: false
 language: en
 title: "Switch to Zola"
-publishDate: "2025-01-11"
+publishDate: 2025-01-11
 summary: "Why I made the switch from Astro+Strapi to Zola"
 seoTags:
   [

@@ -1,5 +1,5 @@
 ---
-date: "2014-10-01"
+date: 2014-10-01
 
 position: "Studentische Hilfskraft"
 company: "Fraunhofer-Institut"

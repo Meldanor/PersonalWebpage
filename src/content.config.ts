@@ -1,17 +1,17 @@
-import { defineCollection, z } from "astro:content";
-
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const projects = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/projects" }),
   schema: ({ image }) =>
     z.object({
-      date: z.string().date(),
+      date: z.date(),
       title: z.string(),
       image: image(),
       imageAlt: z.string(),
       technologies: z.array(z.string()),
-      repositoryUrl: z.string().url().optional(),
+      repositoryUrl: z.url().optional(),
       projectUrl: z.string().optional(),
       showOnMain: z.boolean().default(false),
     }),
@@ -22,7 +22,7 @@ const blogEntries = defineCollection({
   schema: z.object({
     language: z.enum(["de", "en"]),
     draft: z.boolean().default(false),
-    publishDate: z.string().date(),
+    publishDate: z.date(),
     title: z.string(),
     summary: z.string(),
     seoTags: z.array(z.string()).optional(),
@@ -32,10 +32,10 @@ const blogEntries = defineCollection({
 const careerEntries = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./content/career" }),
   schema: z.object({
-    date: z.string().date(),
+    date: z.date(),
     position: z.string(),
     company: z.string(),
-    linkToCompany: z.string().url().nullable(),
+    linkToCompany: z.url().nullable(),
     startYear: z.number(),
     endYear: z.number().or(z.literal("Present")),
     technologies: z.array(z.string()),
@@ -53,10 +53,10 @@ const gameReviews = defineCollection({
     language: z.enum(["de", "en"]),
     title: z.string(),
     summary: z.string(),
-    gameReleaseDate: z.string().date(),
-    publishDate: z.string().date(),
-    startedOn: z.string().date(),
-    finishedOn: z.string().date(),
+    gameReleaseDate: z.date(),
+    publishDate: z.date(),
+    startedOn: z.date(),
+    finishedOn: z.date(),
     playthroughHours: z.number(),
     settings: z.string(),
     platform: z.enum(["GOG", "Steam"]),

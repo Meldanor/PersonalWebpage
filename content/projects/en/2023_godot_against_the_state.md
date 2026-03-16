@@ -1,5 +1,5 @@
 ---
-date: "2023-05-14"
+date: 2023-05-14
 title: "AgainstTheState"
 
 image: "/src/assets/images/projects/godot-projects/AgainstTheState.png"

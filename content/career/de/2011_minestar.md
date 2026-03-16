@@ -1,5 +1,5 @@
 ---
-date: "2011-10-01"
+date: 2011-10-01
 
 position: "Developer"
 company: "Minestar (Minecraft Server)"

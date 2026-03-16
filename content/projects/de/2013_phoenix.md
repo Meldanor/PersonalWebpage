@@ -1,5 +1,5 @@
 ---
-date: "2013-04-09"
+date: 2013-04-09
 title: "Phoenix"
 
 image: "/src/assets/images/projects/2013_phoenixlogo.png"

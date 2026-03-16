@@ -1,5 +1,5 @@
 ---
-date: "2012-05-13"
+date: 2012-05-13
 title: "My Apo Shunkman Cheat AI"
 
 image: "/src/assets/images/projects/2012_myaposhunkman.jpg"

@@ -1,5 +1,5 @@
 ---
-date: "2021-03-21"
+date: 2021-03-21
 title: "ShittySuckyGamesInc"
 
 image: "/src/assets/images/projects/2021_shitty_sucky_games.png"

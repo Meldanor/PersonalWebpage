@@ -1,5 +1,5 @@
 ---
-date: "2010-02-07"
+date: 2010-02-07
 title: "JugendForscht - Indoor Navigation"
 
 image: "/src/assets/images/projects/2010_indoornavigation.png"

@@ -1,5 +1,5 @@
 ---
-date: "2010-06-01"
+date: 2010-06-01
 
 position: "Bundeswehr"
 company: "Deutschland"

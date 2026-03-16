@@ -1,5 +1,5 @@
 ---
-date: "2023-01-01"
+date: 2023-01-01
 title: "First Godot Prototype"
 
 image: "/src/assets/images/projects/godot-projects/CrashCourse.png"

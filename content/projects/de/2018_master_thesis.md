@@ -1,5 +1,5 @@
 ---
-date: "2018-04-22"
+date: 2018-04-22
 title: "Master Thesis"
 
 image: "/src/assets/images/projects/2018_master_thesis_topology.png"

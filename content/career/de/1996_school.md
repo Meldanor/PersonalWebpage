@@ -1,5 +1,5 @@
 ---
-date: "1996-10-01"
+date: 1996-10-01
 
 position: "Schule"
 company: "Berlin"

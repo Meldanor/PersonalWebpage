@@ -1,5 +1,5 @@
 ---
-date: "2023-01-14"
+date: 2023-01-14
 title: "CattleMilk"
 
 image: "/src/assets/images/projects/godot-projects/CattleMilk.png"

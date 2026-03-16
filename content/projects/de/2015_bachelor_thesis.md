@@ -1,5 +1,5 @@
 ---
-date: "2015-05-04"
+date: 2015-05-04
 title: "Bachelor Thesis"
 
 image: "/src/assets/images/projects/2015_bachloer_thesis_logo.png"

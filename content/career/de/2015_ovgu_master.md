@@ -1,5 +1,5 @@
 ---
-date: "2015-04-01"
+date: 2015-04-01
 
 position: "M.Sc. Computer Science"
 company: "OvGU"

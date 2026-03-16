@@ -1,5 +1,5 @@
 ---
-date: "2020-12-04"
+date: 2020-12-04
 title: "Gronkh/Erik in Skyrim"
 
 image: "/src/assets/images/projects/2020_gronkh_in_skyrim.png"

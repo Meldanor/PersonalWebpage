@@ -1,5 +1,5 @@
 ---
-date: "2024-10-27"
+date: 2024-10-27
 title: "HeroOutOfNecessity"
 
 image: "/src/assets/images/projects/godot-projects/HeroOutofNecessity.png"
